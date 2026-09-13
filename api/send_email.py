@@ -31,9 +31,7 @@ class handler(BaseHTTPRequestHandler):
                 # Sending a message TO the admin FROM the user
                 user_msg = data.get('message', '')
                 
-                msg = MIMEText(f"Message from Authenticated User ({email_to}):
-
-{user_msg}")
+                msg = MIMEText(f"Message from Authenticated User ({email_to}):\n\n{user_msg}")
                 msg["Subject"] = f"New Inquiry from {email_to}"
                 msg["From"] = EMAIL_ADDRESS
                 msg["To"] = EMAIL_ADDRESS # Sending to admin
