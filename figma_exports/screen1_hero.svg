@@ -1,0 +1,267 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071224" />
+      <stop offset="50%" stop-color="#0A1D3C" />
+      <stop offset="100%" stop-color="#040C1A" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#112547" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0C1B33" stop-opacity="0.85" />
+    </linearGradient>
+
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1440" height="900" fill="url(#bgGrad)" />
+
+  <!-- Background HUD Grid Lines & Horizon -->
+  <g opacity="0.08" stroke="#38BDF8" stroke-width="1">
+    <line x1="80" y1="0" x2="80" y2="900" />
+    <line x1="280" y1="0" x2="280" y2="900" />
+    <line x1="480" y1="0" x2="480" y2="900" />
+    <line x1="680" y1="0" x2="680" y2="900" />
+    <line x1="880" y1="0" x2="880" y2="900" />
+    <line x1="1080" y1="0" x2="1080" y2="900" />
+    <line x1="1280" y1="0" x2="1280" y2="900" />
+    <line x1="0" y1="180" x2="1440" y2="180" />
+    <line x1="0" y1="380" x2="1440" y2="380" />
+    <line x1="0" y1="580" x2="1440" y2="580" />
+    <line x1="0" y1="780" x2="1440" y2="780" />
+  </g>
+
+  <!-- Ambient Glow Circles -->
+  <circle cx="200" cy="180" r="300" fill="#0284C7" opacity="0.12" filter="blur(80px)" />
+  <circle cx="1200" cy="450" r="350" fill="#2563EB" opacity="0.15" filter="blur(90px)" />
+  <circle cx="720" cy="850" r="250" fill="#F59E0B" opacity="0.08" filter="blur(70px)" />
+
+  <!-- Slide Header Badge (Screen 1 Indicator) -->
+  <g transform="translate(80, 24)">
+    <rect width="1280" height="64" rx="16" fill="#0D2245" fill-opacity="0.7" stroke="#1E3A8A" stroke-width="1" />
+    
+    <!-- AirGen Brand Logo -->
+    <g transform="translate(24, 16)">
+      <!-- Wing Icon -->
+      <path d="M0 16L14 4L28 16L14 12L0 16Z" fill="url(#goldGrad)" />
+      <path d="M4 22L14 14L24 22L14 19L4 22Z" fill="url(#cyanGrad)" />
+      <circle cx="14" cy="11" r="3" fill="#FFFFFF" />
+      <!-- Brand Text -->
+      <text x="38" y="22" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="1">AIRGEN</text>
+      <text x="135" y="22" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#38BDF8" letter-spacing="2">AVIATION</text>
+    </g>
+
+    <!-- Navigation Links -->
+    <g transform="translate(380, 36)" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">
+      <text x="0" y="0" fill="#FFFFFF" font-weight="600">Overview</text>
+      <text x="90" y="0">Pilot Flightpath</text>
+      <text x="210" y="0">12th Eligibility</text>
+      <text x="330" y="0">Global Bases</text>
+      <text x="445" y="0">80+ Alumni</text>
+      <text x="545" y="0">Parent Guide</text>
+    </g>
+
+    <!-- CTA Button in Header -->
+    <g transform="translate(1060, 12)">
+      <rect width="195" height="40" rx="8" fill="url(#goldGrad)" />
+      <text x="97" y="25" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#071224" text-anchor="middle">Book Pilot Assessment</text>
+    </g>
+  </g>
+
+  <!-- Hero Content Left -->
+  <g transform="translate(80, 140)">
+    <!-- Pre-title Pill Badge -->
+    <g>
+      <rect width="360" height="32" rx="16" fill="#1E3A8A" fill-opacity="0.5" stroke="#38BDF8" stroke-width="1" />
+      <circle cx="18" cy="16" r="5" fill="#10B981" />
+      <text x="32" y="21" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#E2E8F0" letter-spacing="0.5">DGCA CADET BATCH 2026 • ADMISSIONS OPEN</text>
+    </g>
+
+    <!-- Hero Headline -->
+    <text x="0" y="85" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="48" fill="#FFFFFF" letter-spacing="-1">
+      From 12th Grade To The
+    </text>
+    <text x="0" y="145" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="48" fill="url(#cyanGrad)" letter-spacing="-1">
+      Airline Flight Deck.
+    </text>
+
+    <!-- Subtitle / Value Proposition -->
+    <text x="0" y="195" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="16" fill="#94A3B8" width="580">
+      <tspan x="0" dy="0">AirGen bridges the gap between high school and commercial aviation.</tspan>
+      <tspan x="0" dy="26">Join India’s premier structured pathway: DGCA precision ground school,</tspan>
+      <tspan x="0" dy="26">200+ global flight hours in the USA &amp; South Africa, and airline placement.</tspan>
+    </text>
+
+    <!-- Trust Stamp -->
+    <g transform="translate(0, 280)">
+      <rect width="580" height="52" rx="10" fill="#0D2245" fill-opacity="0.8" stroke="#1E40AF" stroke-width="1" />
+      <!-- Star Icons -->
+      <path d="M20 26L22 20L28 20L23 16L25 10L20 14L15 10L17 16L12 20L18 20Z" fill="#FBBF24" />
+      <path d="M38 26L40 20L46 20L41 16L43 10L38 14L33 10L35 16L30 20L36 20Z" fill="#FBBF24" />
+      <path d="M56 26L58 20L64 20L59 16L61 10L56 14L51 10L53 16L48 20L54 20Z" fill="#FBBF24" />
+      <text x="80" y="32" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">80+ Successfully Graduated Pilots</text>
+      <text x="315" y="32" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="400" fill="#94A3B8">now flying for IndiGo, Air India &amp; Akasa</text>
+    </g>
+
+    <!-- CTAs -->
+    <g transform="translate(0, 360)">
+      <!-- Primary CTA -->
+      <g>
+        <rect width="240" height="56" rx="12" fill="url(#cyanGrad)" />
+        <text x="120" y="34" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="15" fill="#041226" text-anchor="middle">Check 12th Eligibility →</text>
+      </g>
+      <!-- Secondary CTA -->
+      <g transform="translate(260, 0)">
+        <rect width="250" height="56" rx="12" fill="#0F244A" stroke="#38BDF8" stroke-width="1" />
+        <text x="125" y="34" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="15" fill="#FFFFFF" text-anchor="middle">Download Cadet Prospectus</text>
+      </g>
+    </g>
+
+    <!-- Proof Badges row -->
+    <g transform="translate(0, 445)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748B">
+      <g transform="translate(0, 0)">
+        <circle cx="8" cy="8" r="4" fill="#38BDF8" />
+        <text x="20" y="12" fill="#94A3B8" font-weight="500">DGCA &amp; ICAO Approved</text>
+      </g>
+      <g transform="translate(190, 0)">
+        <circle cx="8" cy="8" r="4" fill="#38BDF8" />
+        <text x="20" y="12" fill="#94A3B8" font-weight="500">1-on-1 Airline Captain Mentorship</text>
+      </g>
+      <g transform="translate(415, 0)">
+        <circle cx="8" cy="8" r="4" fill="#38BDF8" />
+        <text x="20" y="12" fill="#94A3B8" font-weight="500">Day-1 Cost Transparency</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Hero Visual Right (Flight Deck / Cockpit Vector Art) -->
+  <g transform="translate(730, 130)" filter="url(#dropShadow)">
+    <!-- Outer Card Frame -->
+    <rect width="630" height="490" rx="24" fill="url(#cardGrad)" stroke="#1E3A8A" stroke-width="2" />
+
+    <!-- Flight Instrument Graphic Top Banner -->
+    <rect x="2" y="2" width="626" height="260" rx="22" fill="#07152B" />
+    
+    <!-- Artificial Horizon Instrument Vector -->
+    <g transform="translate(315, 130)">
+      <!-- Outer Dial -->
+      <circle cx="0" cy="0" r="95" fill="#0C1F3D" stroke="#38BDF8" stroke-width="2" />
+      <!-- Sky and Ground half -->
+      <path d="M-85 0 A85 85 0 0 1 85 0 Z" fill="#0284C7" fill-opacity="0.8" />
+      <path d="M-85 0 A85 85 0 0 0 85 0 Z" fill="#78350F" fill-opacity="0.7" />
+      <!-- Horizon Line -->
+      <line x1="-85" y1="0" x2="85" y2="0" stroke="#FFFFFF" stroke-width="2" />
+      <!-- Pitch Ladder -->
+      <line x1="-20" y1="-25" x2="20" y2="-25" stroke="#FFFFFF" stroke-width="1.5" />
+      <line x1="-35" y1="-50" x2="35" y2="-50" stroke="#FFFFFF" stroke-width="2" />
+      <line x1="-20" y1="25" x2="20" y2="25" stroke="#FFFFFF" stroke-width="1.5" />
+      <line x1="-35" y1="50" x2="35" y2="50" stroke="#FFFFFF" stroke-width="2" />
+      <!-- Miniature Aircraft Symbol -->
+      <path d="M-40 0L-15 0L-10 10L10 10L15 0L40 0" stroke="#FBBF24" stroke-width="3" fill="none" />
+      <circle cx="0" cy="0" r="3" fill="#FBBF24" />
+      <!-- Speed Tape Left -->
+      <rect x="-140" y="-80" width="40" height="160" rx="6" fill="#0A182F" stroke="#1E3A8A" />
+      <text x="-120" y="-45" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle">160</text>
+      <text x="-120" y="-5" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">145</text>
+      <text x="-120" y="35" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle">130</text>
+      <!-- Alt Tape Right -->
+      <rect x="100" y="-80" width="45" height="160" rx="6" fill="#0A182F" stroke="#1E3A8A" />
+      <text x="122" y="-45" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle">4500</text>
+      <text x="122" y="-5" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="900" fill="#FBBF24" text-anchor="middle">4000</text>
+      <text x="122" y="35" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle">3500</text>
+    </g>
+
+    <!-- Cockpit Live Status Tag -->
+    <g transform="translate(30, 24)">
+      <rect width="150" height="28" rx="6" fill="#061224" stroke="#1E40AF" />
+      <text x="15" y="19" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">AIRGEN SIMULATOR LAB</text>
+    </g>
+
+    <!-- Floating Cadet Card Overlaid -->
+    <g transform="translate(30, 280)">
+      <rect width="570" height="180" rx="16" fill="#091830" stroke="#1E3A8A" stroke-width="1.5" />
+
+      <!-- Cadet Avatar & Name -->
+      <circle cx="50" cy="50" r="28" fill="#1E3A8A" />
+      <!-- Pilot Icon inside -->
+      <path d="M42 42C42 38 46 34 50 34C54 34 58 38 58 42C58 46 54 50 50 50C46 50 42 46 42 42ZM36 62C36 56 42 53 50 53C58 53 64 56 64 62V66H36V62Z" fill="#FBBF24" />
+      
+      <text x="95" y="44" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">First Officer Rahul Sharma</text>
+      <text x="95" y="64" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#38BDF8">AirGen Alumni (Class of 2023) • IndiGo A320</text>
+
+      <!-- Quote -->
+      <text x="40" y="110" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-style="italic" fill="#E2E8F0">
+        “I joined AirGen immediately after my 12th CBSE exams. Within 20 months, I cleared
+      </text>
+      <text x="40" y="132" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-style="italic" fill="#E2E8F0">
+        all 5 DGCA papers, logged 210 hours in Phoenix, and received my airline offer letter.”
+      </text>
+
+      <!-- Badge Strip in Card -->
+      <g transform="translate(40, 146)">
+        <rect width="110" height="22" rx="4" fill="#0D274D" />
+        <text x="55" y="15" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#FBBF24" text-anchor="middle">10+2 TO CAPTAIN</text>
+        <rect x="120" width="130" height="22" rx="4" fill="#0D274D" />
+        <text x="185" y="15" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#38BDF8" text-anchor="middle">DGCA COMPLIANT</text>
+        <rect x="260" width="120" height="22" rx="4" fill="#0D274D" />
+        <text x="320" y="15" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#10B981" text-anchor="middle">AIRLINE PLACED</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Metric Strip (High-Prestige Bar) -->
+  <g transform="translate(80, 680)">
+    <rect width="1280" height="150" rx="20" fill="#091932" stroke="#1E3A8A" stroke-width="1.5" />
+    
+    <!-- Metric 1 -->
+    <g transform="translate(60, 40)">
+      <text x="0" y="32" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="900" fill="url(#goldGrad)">80+</text>
+      <text x="0" y="58" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Graduated Pilots</text>
+      <text x="0" y="78" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">Flying active commercial lines</text>
+    </g>
+    <line x1="330" y1="35" x2="330" y2="115" stroke="#1E3A8A" stroke-width="1" />
+
+    <!-- Metric 2 -->
+    <g transform="translate(370, 40)">
+      <text x="0" y="32" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="900" fill="url(#cyanGrad)">100%</text>
+      <text x="0" y="58" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">DGCA Ground Pass Rate</text>
+      <text x="0" y="78" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">CBT calibrated to real exams</text>
+    </g>
+    <line x1="640" y1="35" x2="640" y2="115" stroke="#1E3A8A" stroke-width="1" />
+
+    <!-- Metric 3 -->
+    <g transform="translate(680, 40)">
+      <text x="0" y="32" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="900" fill="url(#goldGrad)">18-22</text>
+      <text x="0" y="58" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Months Timeline</text>
+      <text x="0" y="78" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">From 10+2 to Commercial Pilot License</text>
+    </g>
+    <line x1="970" y1="35" x2="970" y2="115" stroke="#1E3A8A" stroke-width="1" />
+
+    <!-- Metric 4 -->
+    <g transform="translate(1010, 40)">
+      <text x="0" y="32" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="900" fill="url(#cyanGrad)">9</text>
+      <text x="0" y="58" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Global Flight Bases</text>
+      <text x="0" y="78" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">USA, South Africa &amp; India</text>
+    </g>
+  </g>
+
+  <!-- Slide Footer Watermark Label (Ensuring AirGen is on every screen) -->
+  <g transform="translate(80, 860)">
+    <text x="0" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" letter-spacing="1.5">AIRGEN AVIATION • SCREEN 01: HERO &amp; STRATEGIC VALUE PROPOSITION</text>
+    <text x="1280" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="end">CONFIDENTIAL DESIGN JURY PRESENTATION</text>
+  </g>
+</svg>

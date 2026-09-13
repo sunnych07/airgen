@@ -1,0 +1,261 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071224" />
+      <stop offset="50%" stop-color="#0A1D3C" />
+      <stop offset="100%" stop-color="#040C1A" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1440" height="900" fill="url(#bgGrad3)" />
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="300" r="300" fill="#0284C7" opacity="0.1" filter="blur(90px)" />
+  <circle cx="1200" cy="600" r="350" fill="#10B981" opacity="0.08" filter="blur(90px)" />
+
+  <!-- Top Header Nav -->
+  <g transform="translate(80, 24)">
+    <rect width="1280" height="64" rx="16" fill="#0D2245" fill-opacity="0.7" stroke="#1E3A8A" stroke-width="1" />
+    
+    <!-- Brand -->
+    <g transform="translate(24, 16)">
+      <path d="M0 16L14 4L28 16L14 12L0 16Z" fill="url(#goldGrad3)" />
+      <path d="M4 22L14 14L24 22L14 19L4 22Z" fill="url(#cyanGrad3)" />
+      <circle cx="14" cy="11" r="3" fill="#FFFFFF" />
+      <text x="38" y="22" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="1">AIRGEN</text>
+      <text x="135" y="22" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#38BDF8" letter-spacing="2">AVIATION</text>
+    </g>
+
+    <!-- Nav Links -->
+    <g transform="translate(380, 36)" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">
+      <text x="0" y="0">Overview</text>
+      <text x="90" y="0">Pilot Flightpath</text>
+      <text x="210" y="0" fill="#38BDF8" font-weight="700">12th Eligibility</text>
+      <text x="330" y="0">Global Bases</text>
+      <text x="445" y="0">80+ Alumni</text>
+      <text x="545" y="0">Parent Guide</text>
+    </g>
+
+    <!-- CTA Button -->
+    <g transform="translate(1060, 12)">
+      <rect width="195" height="40" rx="8" fill="url(#goldGrad3)" />
+      <text x="97" y="25" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#071224" text-anchor="middle">Book Pilot Assessment</text>
+    </g>
+  </g>
+
+  <!-- Section Title -->
+  <g transform="translate(80, 115)">
+    <rect width="250" height="26" rx="13" fill="#0E2852" stroke="#38BDF8" stroke-width="1" />
+    <text x="125" y="17" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle" letter-spacing="1">INTERACTIVE FLIGHT DECK CHECK</text>
+
+    <text x="0" y="60" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="-0.5">
+      12th Grade Pilot Eligibility &amp; Career Roadmap Calculator
+    </text>
+    <text x="0" y="88" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="15" fill="#94A3B8">
+      Check your regulatory clearance in 30 seconds. Built for Class 12th CBSE, ICSE, State Boards, and NIOS aspirants.
+    </text>
+  </g>
+
+  <!-- Dual Panel Layout (Calculator Left, Result Clearance Right) -->
+
+  <!-- LEFT PANEL: Interactive Form Inputs -->
+  <g transform="translate(80, 230)" filter="url(#shadow3)">
+    <rect width="620" height="580" rx="20" fill="#0D2245" stroke="#1E3A8A" stroke-width="1.5" />
+    
+    <!-- Step 1: Education Stream -->
+    <g transform="translate(36, 30)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">1. What is your 12th Grade Stream?</text>
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">DGCA requires Physics &amp; Mathematics equivalence.</text>
+
+      <g transform="translate(0, 30)">
+        <!-- Option A (Selected) -->
+        <rect width="260" height="48" rx="10" fill="#1E3A8A" stroke="#38BDF8" stroke-width="2" />
+        <circle cx="24" cy="24" r="8" fill="#38BDF8" />
+        <circle cx="24" cy="24" r="3" fill="#FFFFFF" />
+        <text x="44" y="24" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">PCM (Physics + Math)</text>
+        <text x="44" y="38" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="500" fill="#38BDF8">Direct Eligibility</text>
+
+        <!-- Option B -->
+        <rect x="280" width="268" height="48" rx="10" fill="#0A182F" stroke="#1E3A8A" stroke-width="1" />
+        <circle cx="304" cy="24" r="8" fill="none" stroke="#64748B" stroke-width="2" />
+        <text x="324" y="24" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#CBD5E1">Commerce / Arts / PCB</text>
+        <text x="324" y="38" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="400" fill="#94A3B8">Via NIOS Fast-Track Math</text>
+      </g>
+    </g>
+
+    <!-- Step 2: Current Age -->
+    <g transform="translate(36, 155)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">2. What is your Current Age?</text>
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">Minimum age to hold a DGCA CPL is 18 years.</text>
+
+      <g transform="translate(0, 30)">
+        <!-- Age Pill 1 -->
+        <rect width="125" height="40" rx="8" fill="#0A182F" stroke="#1E3A8A" stroke-width="1" />
+        <text x="62" y="25" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#CBD5E1" text-anchor="middle">16 - 17 Years</text>
+
+        <!-- Age Pill 2 (Selected) -->
+        <rect x="140" width="125" height="40" rx="8" fill="#1E3A8A" stroke="#38BDF8" stroke-width="2" />
+        <text x="202" y="25" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">17 - 19 Years ★</text>
+
+        <!-- Age Pill 3 -->
+        <rect x="280" width="125" height="40" rx="8" fill="#0A182F" stroke="#1E3A8A" stroke-width="1" />
+        <text x="342" y="25" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#CBD5E1" text-anchor="middle">20 - 23 Years</text>
+
+        <!-- Age Pill 4 -->
+        <rect x="420" width="128" height="40" rx="8" fill="#0A182F" stroke="#1E3A8A" stroke-width="1" />
+        <text x="484" y="25" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#CBD5E1" text-anchor="middle">24+ Years</text>
+      </g>
+    </g>
+
+    <!-- Step 3: Medical & Vision Fitness -->
+    <g transform="translate(36, 275)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">3. Medical Fitness &amp; Vision Status</text>
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">Spectacles are 100% permitted under DGCA Class 1 guidelines.</text>
+
+      <g transform="translate(0, 30)">
+        <rect width="260" height="48" rx="10" fill="#1E3A8A" stroke="#38BDF8" stroke-width="2" />
+        <circle cx="24" cy="24" r="8" fill="#38BDF8" />
+        <circle cx="24" cy="24" r="3" fill="#FFFFFF" />
+        <text x="44" y="24" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Normal / Corrected Vision</text>
+        <text x="44" y="38" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="500" fill="#38BDF8">Glasses are fully allowed</text>
+
+        <rect x="280" width="268" height="48" rx="10" fill="#0A182F" stroke="#1E3A8A" stroke-width="1" />
+        <circle cx="304" cy="24" r="8" fill="none" stroke="#64748B" stroke-width="2" />
+        <text x="324" y="24" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#CBD5E1">Not Yet Evaluated</text>
+        <text x="324" y="38" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="400" fill="#94A3B8">AirGen assists Class 2 check</text>
+      </g>
+    </g>
+
+    <!-- Step 4: Flight Destination Preference -->
+    <g transform="translate(36, 395)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">4. Preferred International Flying Base</text>
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">Choose where you build your 200 logged cockpit hours.</text>
+
+      <g transform="translate(0, 30)">
+        <rect width="175" height="44" rx="8" fill="#1E3A8A" stroke="#38BDF8" stroke-width="2" />
+        <text x="87" y="27" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">USA (Phoenix, AZ) ★</text>
+
+        <rect x="185" width="175" height="44" rx="8" fill="#0A182F" stroke="#1E3A8A" stroke-width="1" />
+        <text x="272" y="27" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#CBD5E1" text-anchor="middle">South Africa (JNB)</text>
+
+        <rect x="370" width="178" height="44" rx="8" fill="#0A182F" stroke="#1E3A8A" stroke-width="1" />
+        <text x="459" y="27" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#CBD5E1" text-anchor="middle">Domestic (India)</text>
+      </g>
+    </g>
+
+    <!-- Trust Note at bottom of form -->
+    <g transform="translate(36, 510)">
+      <rect width="548" height="42" rx="8" fill="#08172E" />
+      <text x="20" y="26" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#94A3B8">
+        🛡️ <tspan fill="#38BDF8">AirGen Guarantee:</tspan> We never accept enrollment fees before your medical eligibility is cleared.
+      </text>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: Live Dynamic Assessment Result -->
+  <g transform="translate(740, 230)" filter="url(#shadow3)">
+    <rect width="620" height="580" rx="20" fill="#0B1D3A" stroke="#38BDF8" stroke-width="2" />
+
+    <!-- Top Clearance Banner -->
+    <rect x="2" y="2" width="616" height="74" rx="18" fill="url(#emeraldGrad)" />
+    <g transform="translate(24, 20)">
+      <circle cx="20" cy="18" r="16" fill="#FFFFFF" fill-opacity="0.25" />
+      <path d="M12 18L18 24L28 12" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <text x="50" y="16" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF">STATUS: CLEARED FOR PILOT TRAINING</text>
+      <text x="50" y="32" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#D1FAE5">100% Eligible for DGCA Commercial Pilot License (CPL-ME)</text>
+    </g>
+
+    <!-- Results Breakdown Card -->
+    <g transform="translate(30, 95)">
+      <!-- Roadmap Summary Box -->
+      <rect width="560" height="110" rx="12" fill="#08172D" stroke="#1E3A8A" />
+      
+      <g transform="translate(24, 24)">
+        <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">ESTIMATED TIMELINE</text>
+        <text x="0" y="26" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="900" fill="#FFFFFF">18 - 20 Months</text>
+        <text x="0" y="46" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">From Day 1 Ground School to CPL</text>
+
+        <line x1="260" y1="-5" x2="260" y2="55" stroke="#1E3A8A" stroke-width="1" />
+
+        <text x="290" y="0" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#FBBF24">AIRGEN ALUMNI BENCHMARK</text>
+        <text x="290" y="26" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="900" fill="url(#goldGrad3)">80+ Cadets</text>
+        <text x="290" y="46" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">Currently flying line with airlines</text>
+      </g>
+    </g>
+
+    <!-- Costed Roadmap Breakdown Table -->
+    <g transform="translate(30, 225)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#E2E8F0">TRANSPARENT COST &amp; STAGE BREAKDOWN</text>
+      
+      <g transform="translate(0, 15)">
+        <!-- Row 1 -->
+        <rect width="560" height="38" rx="6" fill="#08172D" />
+        <text x="16" y="24" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Stage 1: DGCA Ground School &amp; CBT (5 Subjects + RTR)</text>
+        <text x="540" y="24" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#38BDF8" text-anchor="end">Included in India</text>
+
+        <!-- Row 2 -->
+        <rect y="44" width="560" height="38" rx="6" fill="#0C1F3D" />
+        <text x="16" y="68" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Stage 2: 200+ Flying Hours (USA Phoenix Base, C-172SP G1000)</text>
+        <text x="540" y="68" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#38BDF8" text-anchor="end">Costed at Standard Hours</text>
+
+        <!-- Row 3 -->
+        <rect y="88" width="560" height="38" rx="6" fill="#08172D" />
+        <text x="16" y="112" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Stage 3: Multi-Engine Instrument Rating &amp; DGCA Conversion</text>
+        <text x="540" y="112" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#38BDF8" text-anchor="end">Pre-Arranged Slots</text>
+
+        <!-- Row 4 -->
+        <rect y="132" width="560" height="38" rx="6" fill="#0C1F3D" />
+        <text x="16" y="156" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Stage 4: Airline Assessment Center Prep &amp; Captain Mentorship</text>
+        <text x="540" y="156" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#10B981" text-anchor="end">Free AirGen Alumni Benefit</text>
+      </g>
+    </g>
+
+    <!-- Financing & Loan Support Tag -->
+    <g transform="translate(30, 435)">
+      <rect width="560" height="36" rx="8" fill="#0E2852" stroke="#1E40AF" stroke-width="1" />
+      <text x="20" y="23" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#FBBF24">
+        💳 100% Pre-Approved Education Loan Assistance with SBI &amp; HDFC Credila
+      </text>
+    </g>
+
+    <!-- Action Buttons -->
+    <g transform="translate(30, 490)">
+      <!-- Button 1 -->
+      <g>
+        <rect width="270" height="52" rx="10" fill="url(#cyanGrad3)" />
+        <text x="135" y="32" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="13.5" fill="#041226" text-anchor="middle">Download Personalized PDF Plan ↓</text>
+      </g>
+      <!-- Button 2 -->
+      <g transform="translate(290, 0)">
+        <rect width="270" height="52" rx="10" fill="url(#goldGrad3)" />
+        <text x="135" y="32" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="13.5" fill="#071224" text-anchor="middle">Book Captain 1-on-1 Call 📞</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Slide Footer Watermark Label -->
+  <g transform="translate(80, 860)">
+    <text x="0" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" letter-spacing="1.5">AIRGEN AVIATION • SCREEN 03: 12TH GRADE ELIGIBILITY &amp; ROADMAP CALCULATOR</text>
+    <text x="1280" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="end">CONFIDENTIAL DESIGN JURY PRESENTATION</text>
+  </g>
+</svg>

@@ -1,0 +1,241 @@
+ From the flight deck
+ Global flight training
+ Regulatory pathways
+ Start the conversation
+ The training system
+ — from the first decision to the left-hand seat.
+(prefers-reduced-motion: reduce)
+))==null?void 0:t.classList.add(
+))return;for(const n of document.querySelectorAll('link[rel=
+).relList;if(i&&i.supports&&i.supports(
+)for(const h of a.addedNodes)h.tagName===
+,a),()=>window.removeEventListener(
+,children:G.map(([r,d])=>e.jsx(
+,children:[G.map(([r,d])=>e.jsxs(
+,children:[n?e.jsxs(
+,children:v.map((i,s)=>e.jsx(
+,children:y.map((r,d)=>e.jsx(
+,delay:120,children:w.stats.map(s=>e.jsxs(
+,delay:140,children:[e.jsxs(
+,delay:160,children:[e.jsxs(
+,delay:200,children:w.values.map(s=>e.jsxs(
+,delay:80,children:ee.map(s=>e.jsxs(
+,delay:80,children:ie.map(s=>e.jsxs(
+,delay:80,children:se.map(s=>e.jsxs(
+,delay:80,children:te.map(s=>e.jsxs(
+,fontWeight:800,letterSpacing:
+,muted:!0,loop:!0,playsInline:!0,autoPlay:!0,preload:
+,n),()=>o.removeEventListener(
+,new Date().getFullYear(),
+,o),window.removeEventListener(
+,onClick:()=>t(s),children:[e.jsx(
+,padding:18,overflow:
+,preserveAspectRatio:
+,r),()=>window.removeEventListener(
+,t.title.toLowerCase(),
+,u),()=>window.removeEventListener(
+,value:g,onChange:u=>m(u.target.value),placeholder:
+,value:h,onChange:u=>c(u.target.value),placeholder:
+,window.localStorage.setItem(
+/assets/imagery/glass-cockpit.webp
+/assets/imagery/hands-on-controls.webp
+/assets/imagery/instrument-panel.webp
+/assets/imagery/landing-fog.webp
+/assets/imagery/simulator-student.webp
+/assets/imagery/takeoff-dusk.webp
+/assets/logo-dark.png
+/assets/logo-light.png
+/assets/pilot-01.png
+/assets/pilot-02.png
+/assets/pilot-03.png
+/assets/testimonials/01-poster.jpg
+/assets/testimonials/01-still.jpg
+/assets/testimonials/01.mp4
+/assets/testimonials/02-poster.jpg
+/assets/testimonials/02-still.jpg
+/assets/testimonials/02.mp4
+/assets/testimonials/03-poster.jpg
+/assets/testimonials/03-still.jpg
+/assets/testimonials/03.mp4
+/assets/testimonials/04-poster.jpg
+/assets/testimonials/04-still.jpg
+/assets/testimonials/04.mp4
+/assets/testimonials/05-poster.jpg
+/assets/testimonials/05-still.jpg
+/assets/testimonials/05.mp4
+/assets/testimonials/06-poster.jpg
+/assets/testimonials/06-still.jpg
+/assets/testimonials/06.mp4
+1-on-1 mentorship with active airline pilots
+13 EASA ATPL theoretical subjects
+24/7 access to recorded modules & notes
+;document.documentElement.dataset.theme=d,document.documentElement.style.colorScheme=r?
+A complete pilot pathway built around 
+A costed roadmap with real dates and a DGCA computer number
+A line job, and a route to the left seat
+AI-enabled classrooms, hybrid learning and modern teaching methodology.
+Adaptive CBT question bank engine
+Advanced high-altitude aerodynamics
+Age, education and the mandatory 10+2 Physics and Maths equivalence, verified before you commit any money.
+Air Navigation & Flight Planning
+Air Regulations & ICAO annexes
+AirGen Aviation / the flight path
+AirGen Aviation — back to top
+Airline command upgrade board & ATPL viva
+Airline readiness assessment
+Airline-style progress review
+An honest conversation about aptitude, temperament, circadian resilience and what the job is actually like day to day.
+Architected the AirGen CBT and live scenario testing platform
+Area 100 KSA competency assessments
+Area 100 KSA was the easiest part, because ASK had already covered it.
+Assessment centre preparation
+Aviation Meteorology & radar interpretation
+Build the foundation.
+Built the structured assessment and grading cadence
+CBT & adaptive test series
+CPL holder preparing for a cadet or first officer vacancy
+CPL with multi-engine instrument rating, 200+ logged hours, MCC and JOC complete
+Cadet mentorship and resilience support protocols
+Cadets complete ground school with AirGen, then build hours with a partner organisation abroad.
+Capability becomes responsibility.
+Cessna 172 / Seneca III
+Cessna 172SP / Tecnam P2006T
+Class 1 Medical + DGCA Computer Number
+Class 1 medical and DGCA computer number in hand
+Class 1 medical cleared
+Class 1 medical guidance
+Command upgrade, 2024
+Commercial multi-engine (CPL-ME)
+Commit to the climb.
+Competency framework
+Costed operational roadmap
+Courses and mentoring designed around the student’s journey.
+Curiosity becomes commitment.
+DGCA Class 1 & 2 medical appointment guidance
+DGCA computer number and medical process ownership
+DGCA computer number processing support
+DGCA licence conversion protocol
+DGCA · FAA · EASA CADETS
+Deep theoretical knowledge and practical competence, not exam tricks.
+Designed the AirGen ASK integrated pilot curriculum
+Develop airline-ready judgement.
+Diamond DA40 / Piper Seminole
+Domestic airline pathway
+Dream beyond the clouds.
+Eligibility & regulatory check
+Every lesson and procedure is built around operational safety.
+First Officer · A320
+First officer development
+Flight hours anywhere.
+From aspiration to airline command
+Global fast-track pathway
+Gold standard theory pathway
+Graded the way airlines grade: standard achieved, improvement recommended, or further development required.
+Ground school here made the flying abroad feel like revision.
+Ground school, Hyderabad
+Ground training and career preparation. Flight training is conducted at partner flying organisations.
+Honesty, discipline, accountability and ethical decision making.
+Hour building, Johannesburg
+Hover a tile to preview it, click to open the full clip.
+How do I become a captain?
+How do I become competent?
+If you can’t measure a cadet’s progress, you can’t improve it.
+In-flight training abroad
+Included in every pathway
+Instrument rating under actual IMC
+Leadership, crew management, risk and operational judgement — including diversion and fuel strategy under pressure.
+Live interactive virtual classrooms
+M40 245 C270 40 730 40 960 245
+MCC & jet orientation
+Manas Teja Rachagarla
+Mentoring the next generation
+Mock examinations matching real patterns
+Most academies teach subjects. We train competencies.
+No prior aviation experience required (10+2 with Physics & Maths)
+Nobody sold me a dream. They costed the whole thing on day one.
+Operate to standard.
+Operational discipline, line-oriented thinking, CRM and threat & error management through the right-hand seat.
+Operations & student success
+Oral exam & checkride scenario drills
+Owns instructor standards and lesson review
+Paperwork should never be the reason someone doesn’t fly.
+Performance-based navigation (PBN)
+Pilot aptitude evaluation tooling
+Pilot-centric learning
+Piper Archer / Cessna 172
+Piper PA-28 / DA42 Twin Star
+Placement pipelines with partner flying schools in nine countries
+Practise the non-normal.
+Precision ground school
+Prepare for the cockpit.
+Previous testimonial
+Private pilot ground & flight preparation
+Professional competency
+Progress is a discipline.
+Question analytics calibrated to real DGCA papers
+RTR(A) radio telephony exam preparation
+Raw-data ILS hand flying, engine failure at V1, steep turns and single-engine go-arounds on flight training devices.
+Real preparation, in the places it actually happens.
+Real-time weak-area performance analytics
+Rigorous 13-subject ATPL theory integrated with Area 100 KSA, which maps directly onto the ASK framework.
+SOP & checklist discipline
+Selection & assessment centre prep
+Senior First Officer
+Should I become a pilot?
+Simulator assessment preparation
+Start the conversation.
+Technical General & aircraft systems
+Technical excellence
+Technical knowledge, communication, mental maths and decision making scored against real airline selection criteria.
+Technology & learning platform
+Tell us where you are in your pilot journey.
+The command prep was about judgement, not questions.
+The interface failed to start.
+The mental maths drills were the reason I passed my airline interview.
+Theory papers cleared + CPL issued + MCC/JOC pass
+They walked me through the medical, which is where I nearly gave up.
+This clip isn’t available yet. The testimonial is below.
+Trained in Phoenix, Arizona
+Training & curriculum
+Training aligned to DGCA, FAA and EASA at international standard.
+Training becomes capability.
+Training destinations
+Transmission received
+Turn knowledge into capability.
+United Arab Emirates
+We help you become an airline captain.
+We help you decide to become a pilot.
+We train you to become a competent pilot.
+We’ll take it from here.
+Your enquiry has been captured for follow-up. Note that this form is not yet wired to a live inbox — see 
+airgen-hero-statement
+airgen-hero-vignette
+attitude, skills and knowledge
+editorial-section about-section
+editorial-section founders-section
+enquire-button focus-ring
+founder-card focus-ring
+journey-curve-card journey-curve-card--1
+journey-curve-card journey-curve-card--2
+journey-curve-card journey-curve-card--3
+journey-curve-card-number
+journey-modules-head
+journey-video-overlay
+manas-teja-rachagarla
+mobile-menu-button focus-ring
+modal-card modal-card--video
+modal-close focus-ring
+primary-button focus-ring
+primary-button modal-submit focus-ring
+secondary-button focus-ring
+system-ui, sans-serif
+testimonial-rail-clean
+testimonial-tile-content
+testimonial-tile-play
+testimonial-tile-shade
+testimonials-grid-clean
+testimonials-head-clean
+text-button focus-ring journey-ask
+theme-switch focus-ring
+video-step video-step--next focus-ring
+video-step video-step--prev focus-ring

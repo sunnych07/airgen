@@ -1,0 +1,307 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071224" />
+      <stop offset="50%" stop-color="#0A1D3C" />
+      <stop offset="100%" stop-color="#040C1A" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1440" height="900" fill="url(#bgGrad2)" />
+
+  <!-- Ambient Glows -->
+  <circle cx="250" cy="400" r="300" fill="#0284C7" opacity="0.09" filter="blur(90px)" />
+  <circle cx="1150" cy="450" r="350" fill="#F59E0B" opacity="0.08" filter="blur(90px)" />
+
+  <!-- Top Header Nav (Standard AirGen Header) -->
+  <g transform="translate(80, 24)">
+    <rect width="1280" height="64" rx="16" fill="#0D2245" fill-opacity="0.7" stroke="#1E3A8A" stroke-width="1" />
+    
+    <!-- AirGen Brand Logo -->
+    <g transform="translate(24, 16)">
+      <path d="M0 16L14 4L28 16L14 12L0 16Z" fill="url(#goldGrad2)" />
+      <path d="M4 22L14 14L24 22L14 19L4 22Z" fill="url(#cyanGrad2)" />
+      <circle cx="14" cy="11" r="3" fill="#FFFFFF" />
+      <text x="38" y="22" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="1">AIRGEN</text>
+      <text x="135" y="22" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#38BDF8" letter-spacing="2">AVIATION</text>
+    </g>
+
+    <!-- Nav Links -->
+    <g transform="translate(380, 36)" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">
+      <text x="0" y="0">Overview</text>
+      <text x="90" y="0" fill="#38BDF8" font-weight="700">Pilot Flightpath</text>
+      <text x="210" y="0">12th Eligibility</text>
+      <text x="330" y="0">Global Bases</text>
+      <text x="445" y="0">80+ Alumni</text>
+      <text x="545" y="0">Parent Guide</text>
+    </g>
+
+    <!-- CTA Button -->
+    <g transform="translate(1060, 12)">
+      <rect width="195" height="40" rx="8" fill="url(#goldGrad2)" />
+      <text x="97" y="25" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#071224" text-anchor="middle">Book Pilot Assessment</text>
+    </g>
+  </g>
+
+  <!-- Section Header -->
+  <g transform="translate(80, 120)">
+    <!-- Small Tag -->
+    <rect width="210" height="26" rx="13" fill="#0E2852" stroke="#38BDF8" stroke-width="1" />
+    <text x="105" y="17" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle" letter-spacing="1">STRUCTURED 5-STAGE ROADMAP</text>
+
+    <!-- Main Title -->
+    <text x="0" y="65" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="36" fill="#FFFFFF" letter-spacing="-0.5">
+      The Clear Flightpath: 12th Pass to First Officer Seat
+    </text>
+    <text x="0" y="95" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="15" fill="#94A3B8">
+      No ambiguities, no hidden costs. A DGCA-synchronized roadmap engineered to get ambitious cadets into the cockpit in 18-22 months.
+    </text>
+  </g>
+
+  <!-- Chronological Flightpath Connector Bar -->
+  <g transform="translate(100, 245)">
+    <line x1="80" y1="20" x2="1160" y2="20" stroke="#1E3A8A" stroke-width="4" stroke-dasharray="6 6" />
+    <line x1="80" y1="20" x2="680" y2="20" stroke="#38BDF8" stroke-width="4" />
+  </g>
+
+  <!-- 5 Interactive Pathway Cards Across the Canvas -->
+  
+  <!-- STAGE 01 -->
+  <g transform="translate(80, 270)" filter="url(#shadow2)">
+    <rect width="240" height="430" rx="16" fill="#0D2244" stroke="#1E3A8A" stroke-width="1.5" />
+    <rect x="1" y="1" width="238" height="6" rx="3" fill="#38BDF8" />
+    
+    <!-- Step Badge -->
+    <circle cx="40" cy="40" r="18" fill="#0284C7" />
+    <text x="40" y="45" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF" text-anchor="middle">01</text>
+    <text x="70" y="38" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">MONTH 1-2</text>
+    <text x="70" y="52" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64748B">FOUNDATION</text>
+
+    <!-- Card Title -->
+    <text x="24" y="90" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">Medical &amp; DGCA</text>
+    <text x="24" y="112" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">Computer No.</text>
+
+    <line x1="24" y1="130" x2="216" y2="130" stroke="#1E3A8A" stroke-width="1" />
+
+    <!-- Bullet Points -->
+    <g transform="translate(24, 150)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#CBD5E1">
+      <circle cx="4" cy="6" r="3" fill="#38BDF8" />
+      <text x="14" y="10">Class 2 &amp; Class 1 Medical</text>
+      
+      <circle cx="4" cy="36" r="3" fill="#38BDF8" />
+      <text x="14" y="40">DGCA Computer Number</text>
+
+      <circle cx="4" cy="66" r="3" fill="#38BDF8" />
+      <text x="14" y="70">10+2 Verification (CBSE/NIOS)</text>
+
+      <circle cx="4" cy="96" r="3" fill="#38BDF8" />
+      <text x="14" y="100">Pilot Aptitude Assessment</text>
+    </g>
+
+    <!-- Badge / Metric -->
+    <g transform="translate(20, 360)">
+      <rect width="200" height="42" rx="8" fill="#08172E" stroke="#1E3A8A" />
+      <text x="100" y="26" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle">✓ ZERO-RISK VERIFICATION</text>
+    </g>
+  </g>
+
+  <!-- STAGE 02 -->
+  <g transform="translate(340, 270)" filter="url(#shadow2)">
+    <rect width="240" height="430" rx="16" fill="#0D2244" stroke="#1E3A8A" stroke-width="1.5" />
+    <rect x="1" y="1" width="238" height="6" rx="3" fill="#38BDF8" />
+
+    <!-- Step Badge -->
+    <circle cx="40" cy="40" r="18" fill="#0284C7" />
+    <text x="40" y="45" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF" text-anchor="middle">02</text>
+    <text x="70" y="38" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">MONTH 3-6</text>
+    <text x="70" y="52" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64748B">GROUND SCHOOL</text>
+
+    <!-- Card Title -->
+    <text x="24" y="90" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">Precision Theory</text>
+    <text x="24" y="112" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">&amp; DGCA Exams</text>
+
+    <line x1="24" y1="130" x2="216" y2="130" stroke="#1E3A8A" stroke-width="1" />
+
+    <!-- Bullet Points -->
+    <g transform="translate(24, 150)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#CBD5E1">
+      <circle cx="4" cy="6" r="3" fill="#38BDF8" />
+      <text x="14" y="10">5 Core DGCA Subjects</text>
+      
+      <circle cx="4" cy="36" r="3" fill="#38BDF8" />
+      <text x="14" y="40">Air Nav, Met &amp; Air Regs</text>
+
+      <circle cx="4" cy="66" r="3" fill="#38BDF8" />
+      <text x="14" y="70">RTR(A) Radio Telephony</text>
+
+      <circle cx="4" cy="96" r="3" fill="#38BDF8" />
+      <text x="14" y="100">Area 100 KSA Competency</text>
+    </g>
+
+    <!-- Badge / Metric -->
+    <g transform="translate(20, 360)">
+      <rect width="200" height="42" rx="8" fill="#08172E" stroke="#1E3A8A" />
+      <text x="100" y="26" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle">100% 1st ATTEMPT PASS RATE</text>
+    </g>
+  </g>
+
+  <!-- STAGE 03 (HIGHLIGHTED CORE) -->
+  <g transform="translate(600, 250)" filter="url(#shadow2)">
+    <rect width="240" height="450" rx="16" fill="#112952" stroke="#FBBF24" stroke-width="2" />
+    <rect x="1" y="1" width="238" height="8" rx="4" fill="url(#goldGrad2)" />
+
+    <!-- Top Badge -->
+    <rect x="50" y="-12" width="140" height="24" rx="12" fill="url(#goldGrad2)" />
+    <text x="120" y="4" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="800" fill="#071224" text-anchor="middle">GLOBAL FLIGHT PHASE</text>
+
+    <!-- Step Badge -->
+    <circle cx="40" cy="50" r="18" fill="url(#goldGrad2)" />
+    <text x="40" y="55" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="13" fill="#071224" text-anchor="middle">03</text>
+    <text x="70" y="48" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#FBBF24">MONTH 7-14</text>
+    <text x="70" y="62" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#94A3B8">FLYING ABROAD</text>
+
+    <!-- Card Title -->
+    <text x="24" y="100" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">200+ Flying Hours</text>
+    <text x="24" y="122" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">(USA / S. Africa)</text>
+
+    <line x1="24" y1="140" x2="216" y2="140" stroke="#1E40AF" stroke-width="1" />
+
+    <!-- Bullet Points -->
+    <g transform="translate(24, 160)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#E2E8F0">
+      <circle cx="4" cy="6" r="3" fill="#FBBF24" />
+      <text x="14" y="10">First Solo Flight Ceremony</text>
+      
+      <circle cx="4" cy="36" r="3" fill="#FBBF24" />
+      <text x="14" y="40">Cessna 172SP G1000 Cockpit</text>
+
+      <circle cx="4" cy="66" r="3" fill="#FBBF24" />
+      <text x="14" y="70">Night &amp; Cross-Country Hours</text>
+
+      <circle cx="4" cy="96" r="3" fill="#FBBF24" />
+      <text x="14" y="100">FAA / SACAA Commercial CPL</text>
+
+      <circle cx="4" cy="126" r="3" fill="#FBBF24" />
+      <text x="14" y="130">Full Airport Housing &amp; Visa</text>
+    </g>
+
+    <!-- Badge / Metric -->
+    <g transform="translate(20, 380)">
+      <rect width="200" height="42" rx="8" fill="#0A1E3C" stroke="#FBBF24" />
+      <text x="100" y="26" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#FBBF24" text-anchor="middle">★ PHOENIX &amp; JOHANNESBURG</text>
+    </g>
+  </g>
+
+  <!-- STAGE 04 -->
+  <g transform="translate(860, 270)" filter="url(#shadow2)">
+    <rect width="240" height="430" rx="16" fill="#0D2244" stroke="#1E3A8A" stroke-width="1.5" />
+    <rect x="1" y="1" width="238" height="6" rx="3" fill="#38BDF8" />
+
+    <!-- Step Badge -->
+    <circle cx="40" cy="40" r="18" fill="#0284C7" />
+    <text x="40" y="45" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF" text-anchor="middle">04</text>
+    <text x="70" y="38" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">MONTH 15-17</text>
+    <text x="70" y="52" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64748B">CONVERSION</text>
+
+    <!-- Card Title -->
+    <text x="24" y="90" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">Multi-Engine Rating</text>
+    <text x="24" y="112" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">&amp; DGCA CPL</text>
+
+    <line x1="24" y1="130" x2="216" y2="130" stroke="#1E3A8A" stroke-width="1" />
+
+    <!-- Bullet Points -->
+    <g transform="translate(24, 150)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#CBD5E1">
+      <circle cx="4" cy="6" r="3" fill="#38BDF8" />
+      <text x="14" y="10">Piper Seminole Multi-Engine</text>
+      
+      <circle cx="4" cy="36" r="3" fill="#38BDF8" />
+      <text x="14" y="40">Instrument Rating (IR)</text>
+
+      <circle cx="4" cy="66" r="3" fill="#38BDF8" />
+      <text x="14" y="70">Smooth DGCA CPL Conversion</text>
+
+      <circle cx="4" cy="96" r="3" fill="#38BDF8" />
+      <text x="14" y="100">Indian Airspace Skill Tests</text>
+    </g>
+
+    <!-- Badge / Metric -->
+    <g transform="translate(20, 360)">
+      <rect width="200" height="42" rx="8" fill="#08172E" stroke="#1E3A8A" />
+      <text x="100" y="26" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle">✓ CPL-ME WITH IR ENDORSED</text>
+    </g>
+  </g>
+
+  <!-- STAGE 05 -->
+  <g transform="translate(1120, 270)" filter="url(#shadow2)">
+    <rect width="240" height="430" rx="16" fill="#0D2244" stroke="#1E3A8A" stroke-width="1.5" />
+    <rect x="1" y="1" width="238" height="6" rx="3" fill="#38BDF8" />
+
+    <!-- Step Badge -->
+    <circle cx="40" cy="40" r="18" fill="#0284C7" />
+    <text x="40" y="45" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="13" fill="#FFFFFF" text-anchor="middle">05</text>
+    <text x="70" y="38" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">MONTH 18-22</text>
+    <text x="70" y="52" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64748B">AIRLINE SEAT</text>
+
+    <!-- Card Title -->
+    <text x="24" y="90" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">Type Rating &amp;</text>
+    <text x="24" y="112" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">First Officer Seat</text>
+
+    <line x1="24" y1="130" x2="216" y2="130" stroke="#1E3A8A" stroke-width="1" />
+
+    <!-- Bullet Points -->
+    <g transform="translate(24, 150)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#CBD5E1">
+      <circle cx="4" cy="6" r="3" fill="#38BDF8" />
+      <text x="14" y="10">A320 / B737 Type Rating Prep</text>
+      
+      <circle cx="4" cy="36" r="3" fill="#38BDF8" />
+      <text x="14" y="40">MCC &amp; Jet Orientation (JOC)</text>
+
+      <circle cx="4" cy="66" r="3" fill="#38BDF8" />
+      <text x="14" y="70">Airline Simulator Assessments</text>
+
+      <circle cx="4" cy="96" r="3" fill="#38BDF8" />
+      <text x="14" y="100">Captain Viva &amp; Line Placement</text>
+    </g>
+
+    <!-- Badge / Metric -->
+    <g transform="translate(20, 360)">
+      <rect width="200" height="42" rx="8" fill="#08172E" stroke="#1E3A8A" />
+      <text x="100" y="26" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle">★ 80+ CADETS PLACED</text>
+    </g>
+  </g>
+
+  <!-- Bottom CTA & Trust strip -->
+  <g transform="translate(80, 740)">
+    <rect width="1280" height="90" rx="16" fill="#0B1E3B" stroke="#1E3A8A" stroke-width="1" />
+    <text x="40" y="52" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">
+      Wondering where you fit in the journey?
+    </text>
+    <text x="360" y="52" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400" fill="#94A3B8">
+      Take the 60-second eligibility test to get your personal roadmap.
+    </text>
+    
+    <g transform="translate(980, 20)">
+      <rect width="260" height="50" rx="10" fill="url(#cyanGrad2)" />
+      <text x="130" y="31" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="14" fill="#041226" text-anchor="middle">Launch Eligibility Tool →</text>
+    </g>
+  </g>
+
+  <!-- Slide Footer Watermark Label -->
+  <g transform="translate(80, 860)">
+    <text x="0" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" letter-spacing="1.5">AIRGEN AVIATION • SCREEN 02: 5-STAGE PILOT CAREER FLIGHTPATH</text>
+    <text x="1280" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="end">CONFIDENTIAL DESIGN JURY PRESENTATION</text>
+  </g>
+</svg>

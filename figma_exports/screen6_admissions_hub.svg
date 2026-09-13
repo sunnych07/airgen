@@ -1,0 +1,235 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071224" />
+      <stop offset="50%" stop-color="#0A1D3C" />
+      <stop offset="100%" stop-color="#040C1A" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <filter id="shadow6" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1440" height="900" fill="url(#bgGrad6)" />
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="400" r="300" fill="#0284C7" opacity="0.08" filter="blur(90px)" />
+  <circle cx="1200" cy="500" r="350" fill="#F59E0B" opacity="0.08" filter="blur(90px)" />
+
+  <!-- Top Header Nav -->
+  <g transform="translate(80, 24)">
+    <rect width="1280" height="64" rx="16" fill="#0D2245" fill-opacity="0.7" stroke="#1E3A8A" stroke-width="1" />
+    
+    <g transform="translate(24, 16)">
+      <path d="M0 16L14 4L28 16L14 12L0 16Z" fill="url(#goldGrad6)" />
+      <path d="M4 22L14 14L24 22L14 19L4 22Z" fill="url(#cyanGrad6)" />
+      <circle cx="14" cy="11" r="3" fill="#FFFFFF" />
+      <text x="38" y="22" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="1">AIRGEN</text>
+      <text x="135" y="22" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#38BDF8" letter-spacing="2">AVIATION</text>
+    </g>
+
+    <g transform="translate(380, 36)" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">
+      <text x="0" y="0">Overview</text>
+      <text x="90" y="0">Pilot Flightpath</text>
+      <text x="210" y="0">12th Eligibility</text>
+      <text x="330" y="0">Global Bases</text>
+      <text x="445" y="0">80+ Alumni</text>
+      <text x="545" y="0" fill="#38BDF8" font-weight="700">Parent Guide</text>
+    </g>
+
+    <g transform="translate(1060, 12)">
+      <rect width="195" height="40" rx="8" fill="url(#goldGrad6)" />
+      <text x="97" y="25" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#071224" text-anchor="middle">Book Pilot Assessment</text>
+    </g>
+  </g>
+
+  <!-- Section Title -->
+  <g transform="translate(80, 110)">
+    <rect width="260" height="26" rx="13" fill="#0E2852" stroke="#38BDF8" stroke-width="1" />
+    <text x="130" y="17" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle" letter-spacing="1">PARENTS &amp; ADMISSIONS PORTAL</text>
+
+    <text x="0" y="58" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="-0.5">
+      Begin Your Flight Journey With 100% Clarity
+    </text>
+    <text x="0" y="84" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="15" fill="#94A3B8">
+      Schedule a private 1-on-1 counseling session with an active Airline Captain for you and your parents.
+    </text>
+  </g>
+
+  <!-- Dual Column Layout: Booking Form Left, FAQs Right -->
+  
+  <!-- LEFT COLUMN: Consultation Booking Form -->
+  <g transform="translate(80, 215)" filter="url(#shadow6)">
+    <rect width="580" height="490" rx="20" fill="#0D2245" stroke="#1E3A8A" stroke-width="1.5" />
+    
+    <g transform="translate(36, 28)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">Book a 1-on-1 Flight Deck Consultation</text>
+      <text x="0" y="22" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="400" fill="#94A3B8">Speak directly with Captain Manas Teja &amp; AirGen senior examiners.</text>
+
+      <!-- Input 1: Student Name -->
+      <g transform="translate(0, 45)">
+        <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#CBD5E1">Student Full Name *</text>
+        <rect y="8" width="508" height="44" rx="8" fill="#08172E" stroke="#1E3A8A" />
+        <text x="16" y="35" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="400" fill="#64748B">e.g., Rohan Gupta</text>
+      </g>
+
+      <!-- Input 2: Parent Name & Phone (Split) -->
+      <g transform="translate(0, 120)">
+        <g>
+          <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#CBD5E1">Parent / Guardian Name *</text>
+          <rect y="8" width="244" height="44" rx="8" fill="#08172E" stroke="#1E3A8A" />
+          <text x="16" y="35" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="400" fill="#64748B">e.g., Rajesh Gupta</text>
+        </g>
+        <g transform="translate(264, 0)">
+          <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#CBD5E1">Parent Mobile Number (WhatsApp) *</text>
+          <rect y="8" width="244" height="44" rx="8" fill="#08172E" stroke="#1E3A8A" />
+          <text x="16" y="35" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="400" fill="#64748B">+91 98765 43210</text>
+        </g>
+      </g>
+
+      <!-- Input 3: Education Status -->
+      <g transform="translate(0, 195)">
+        <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#CBD5E1">12th Grade Status *</text>
+        <g transform="translate(0, 8)">
+          <rect width="160" height="38" rx="6" fill="#1E3A8A" stroke="#38BDF8" />
+          <text x="80" y="24" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Currently in 12th</text>
+
+          <rect x="172" width="160" height="38" rx="6" fill="#08172E" stroke="#1E3A8A" />
+          <text x="252" y="24" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Passed 12th (2025/26)</text>
+
+          <rect x="344" width="164" height="38" rx="6" fill="#08172E" stroke="#1E3A8A" />
+          <text x="426" y="24" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#94A3B8" text-anchor="middle">Graduate / Gap Year</text>
+        </g>
+      </g>
+
+      <!-- Input 4: Preferred Mode -->
+      <g transform="translate(0, 265)">
+        <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#CBD5E1">Consultation Preference *</text>
+        <g transform="translate(0, 8)">
+          <rect width="244" height="38" rx="6" fill="#1E3A8A" stroke="#38BDF8" />
+          <text x="122" y="24" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">📍 Hyderabad Campus Visit</text>
+
+          <rect x="264" width="244" height="38" rx="6" fill="#08172E" stroke="#1E3A8A" />
+          <text x="386" y="24" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#CBD5E1" text-anchor="middle">💻 Video Call via Zoom</text>
+        </g>
+      </g>
+
+      <!-- Submit Button -->
+      <g transform="translate(0, 345)">
+        <rect width="508" height="52" rx="10" fill="url(#goldGrad6)" />
+        <text x="254" y="32" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="14.5" fill="#071224" text-anchor="middle">Confirm Free Captain Consultation ✈️</text>
+      </g>
+
+      <!-- Security guarantee -->
+      <text x="254" y="420" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#64748B" text-anchor="middle">
+        🔒 100% Confidential. No spam. You will receive an instant WhatsApp confirmation.
+      </text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: Parents FAQ Accordion & Accreditations -->
+  <g transform="translate(700, 215)" filter="url(#shadow6)">
+    <rect width="660" height="490" rx="20" fill="#0B1E3B" stroke="#1E3A8A" stroke-width="1.5" />
+    
+    <g transform="translate(32, 28)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">Frequently Asked Questions by Parents</text>
+      <text x="0" y="22" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="400" fill="#94A3B8">Clear, honest answers to safeguard your child’s career investment.</text>
+
+      <!-- FAQ 1 (Expanded) -->
+      <g transform="translate(0, 45)">
+        <rect width="596" height="100" rx="10" fill="#08172D" stroke="#38BDF8" stroke-width="1.5" />
+        <text x="18" y="26" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#38BDF8">Q: Is my child safe while flying abroad in Phoenix or South Africa?</text>
+        <text x="18" y="52" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#CBD5E1">
+          <tspan x="18" dy="0">Yes. All AirGen cadets stay in secured, gated pilot residences with 24/7 wardens,</tspan>
+          <tspan x="18" dy="18">supervised flight line shuttles, and dedicated AirGen batch managers on ground.</tspan>
+        </text>
+      </g>
+
+      <!-- FAQ 2 -->
+      <g transform="translate(0, 160)">
+        <rect width="596" height="68" rx="10" fill="#08172D" stroke="#1E3A8A" />
+        <text x="18" y="26" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">Q: Can we avail an education loan for the entire course?</text>
+        <text x="18" y="48" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">
+          Yes. AirGen provides full documentation for SBI Scholar &amp; HDFC Credila pilot loan schemes.
+        </text>
+      </g>
+
+      <!-- FAQ 3 -->
+      <g transform="translate(0, 243)">
+        <rect width="596" height="68" rx="10" fill="#08172D" stroke="#1E3A8A" />
+        <text x="18" y="26" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">Q: What happens if DGCA regulations change during training?</text>
+        <text x="18" y="48" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">
+          AirGen’s curriculum is synchronized in real-time with DGCA CAR Section 7 requirements.
+        </text>
+      </g>
+
+      <!-- Regulatory Accreditations Box -->
+      <g transform="translate(0, 330)">
+        <rect width="596" height="85" rx="10" fill="#08172E" stroke="#1E3A8A" />
+        <text x="20" y="24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#FBBF24" letter-spacing="1">REGULATORY COMPLIANCE &amp; ACCREDITATIONS:</text>
+        
+        <g transform="translate(20, 38)" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0">
+          <g>
+            <circle cx="6" cy="6" r="3" fill="#10B981" />
+            <text x="16" y="10">DGCA India (CAR Section 7)</text>
+          </g>
+          <g transform="translate(190, 0)">
+            <circle cx="6" cy="6" r="3" fill="#10B981" />
+            <text x="16" y="10">FAA Part 141 (USA)</text>
+          </g>
+          <g transform="translate(340, 0)">
+            <circle cx="6" cy="6" r="3" fill="#10B981" />
+            <text x="16" y="10">SACAA Part 61 (S. Africa)</text>
+          </g>
+          <g transform="translate(485, 0)">
+            <circle cx="6" cy="6" r="3" fill="#10B981" />
+            <text x="16" y="10">ICAO Annex 1</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Regulatory Brand Footer -->
+  <g transform="translate(80, 725)">
+    <rect width="1280" height="95" rx="14" fill="#07152B" stroke="#1E3A8A" stroke-width="1" />
+    
+    <!-- Footer Brand -->
+    <g transform="translate(24, 25)">
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="18" fill="#FFFFFF">AIRGEN AVIATION ACADEMY</text>
+      <text x="0" y="38" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="11.5" fill="#64748B">Aviation Career Pathway &amp; DGCA Precision Ground Training Organization • 80+ Airline Pilots Graduated</text>
+    </g>
+
+    <!-- Campus Details -->
+    <g transform="translate(750, 25)" font-family="Inter, system-ui, sans-serif" font-size="11.5" fill="#94A3B8">
+      <text x="0" y="14" font-weight="700" fill="#CBD5E1">Flight HQ:</text>
+      <text x="65" y="14">Hangar 4, Begumpet / Hyderabad, India</text>
+      <text x="0" y="34" font-weight="700" fill="#CBD5E1">Inquiries:</text>
+      <text x="65" y="34">admissions@airgenaviation.com | +91 91234 56789</text>
+    </g>
+
+    <!-- Copyright -->
+    <g transform="translate(1180, 25)">
+      <text x="80" y="24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569" text-anchor="end">© 2026 AirGen</text>
+      <text x="80" y="40" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569" text-anchor="end">All Rights Reserved</text>
+    </g>
+  </g>
+
+  <!-- Slide Footer Watermark Label -->
+  <g transform="translate(80, 860)">
+    <text x="0" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" letter-spacing="1.5">AIRGEN AVIATION • SCREEN 06: ADMISSIONS, PARENTAL GUIDANCE &amp; ACCREDITATIONS</text>
+    <text x="1280" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="end">CONFIDENTIAL DESIGN JURY PRESENTATION</text>
+  </g>
+</svg>

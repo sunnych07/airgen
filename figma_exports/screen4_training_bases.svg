@@ -1,0 +1,222 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071224" />
+      <stop offset="50%" stop-color="#0A1D3C" />
+      <stop offset="100%" stop-color="#040C1A" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <filter id="shadow4" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1440" height="900" fill="url(#bgGrad4)" />
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="400" r="300" fill="#0284C7" opacity="0.08" filter="blur(90px)" />
+  <circle cx="1200" cy="350" r="350" fill="#2563EB" opacity="0.09" filter="blur(90px)" />
+
+  <!-- Top Header Nav -->
+  <g transform="translate(80, 24)">
+    <rect width="1280" height="64" rx="16" fill="#0D2245" fill-opacity="0.7" stroke="#1E3A8A" stroke-width="1" />
+    
+    <g transform="translate(24, 16)">
+      <path d="M0 16L14 4L28 16L14 12L0 16Z" fill="url(#goldGrad4)" />
+      <path d="M4 22L14 14L24 22L14 19L4 22Z" fill="url(#cyanGrad4)" />
+      <circle cx="14" cy="11" r="3" fill="#FFFFFF" />
+      <text x="38" y="22" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="1">AIRGEN</text>
+      <text x="135" y="22" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#38BDF8" letter-spacing="2">AVIATION</text>
+    </g>
+
+    <g transform="translate(380, 36)" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">
+      <text x="0" y="0">Overview</text>
+      <text x="90" y="0">Pilot Flightpath</text>
+      <text x="210" y="0">12th Eligibility</text>
+      <text x="330" y="0" fill="#38BDF8" font-weight="700">Global Bases</text>
+      <text x="445" y="0">80+ Alumni</text>
+      <text x="545" y="0">Parent Guide</text>
+    </g>
+
+    <g transform="translate(1060, 12)">
+      <rect width="195" height="40" rx="8" fill="url(#goldGrad4)" />
+      <text x="97" y="25" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#071224" text-anchor="middle">Book Pilot Assessment</text>
+    </g>
+  </g>
+
+  <!-- Section Title -->
+  <g transform="translate(80, 115)">
+    <rect width="260" height="26" rx="13" fill="#0E2852" stroke="#38BDF8" stroke-width="1" />
+    <text x="130" y="17" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle" letter-spacing="1">WORLD-CLASS FLIGHT ECOSYSTEM</text>
+
+    <text x="0" y="60" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="-0.5">
+      Global Flight Training Bases &amp; Advanced Fleet
+    </text>
+    <text x="0" y="88" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="15" fill="#94A3B8">
+      Ground training in India with AirGen, followed by 200+ fast-track flying hours at premier partner academies in the USA &amp; South Africa.
+    </text>
+  </g>
+
+  <!-- 3 Training Base Cards Grid -->
+  
+  <!-- BASE 1: USA (PHOENIX, ARIZONA) -->
+  <g transform="translate(80, 230)" filter="url(#shadow4)">
+    <rect width="405" height="500" rx="20" fill="#0D2245" stroke="#38BDF8" stroke-width="2" />
+    
+    <!-- Card Hero Art / Banner -->
+    <rect x="2" y="2" width="401" height="150" rx="18" fill="#091830" />
+    <!-- US Flag Tag -->
+    <g transform="translate(24, 24)">
+      <rect width="130" height="28" rx="6" fill="#1E3A8A" />
+      <text x="65" y="19" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">🇺🇸 UNITED STATES</text>
+    </g>
+    <!-- Weather Metric -->
+    <g transform="translate(275, 24)">
+      <rect width="105" height="28" rx="6" fill="#07152B" stroke="#FBBF24" stroke-width="1" />
+      <text x="52" y="19" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#FBBF24" text-anchor="middle">☀️ 350 Fly Days</text>
+    </g>
+
+    <!-- Base Title -->
+    <text x="24" y="105" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="900" fill="#FFFFFF">Phoenix, Arizona Base</text>
+    <text x="24" y="128" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#38BDF8">FAA Part 141 Accredited Flight Center</text>
+
+    <!-- Specifications List -->
+    <g transform="translate(24, 180)" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+      <!-- Spec 1 -->
+      <text x="0" y="0" font-weight="700" fill="#FFFFFF">Primary Training Aircraft:</text>
+      <text x="0" y="20" fill="#94A3B8">Cessna 172SP (Garmin G1000 Glass Cockpit)</text>
+      <line x1="0" y1="35" x2="357" y2="35" stroke="#1E3A8A" />
+
+      <!-- Spec 2 -->
+      <text x="0" y="55" font-weight="700" fill="#FFFFFF">Multi-Engine Aircraft:</text>
+      <text x="0" y="75" fill="#94A3B8">Piper Seminole PA-44 Multi-Engine IFR</text>
+      <line x1="0" y1="90" x2="357" y2="90" stroke="#1E3A8A" />
+
+      <!-- Spec 3 -->
+      <text x="0" y="110" font-weight="700" fill="#FFFFFF">Duration to 200 Flying Hours:</text>
+      <text x="0" y="130" fill="#FBBF24" font-weight="700">7 - 9 Months (Fast-Track Weather Guarantee)</text>
+      <line x1="0" y1="145" x2="357" y2="145" stroke="#1E3A8A" />
+
+      <!-- Spec 4 -->
+      <text x="0" y="165" font-weight="700" fill="#FFFFFF">Student Living &amp; Visa:</text>
+      <text x="0" y="185" fill="#94A3B8">On-campus gated apartments, dedicated Indian meal plans, M-1 visa assistance.</text>
+    </g>
+
+    <!-- Bottom Badge -->
+    <g transform="translate(24, 435)">
+      <rect width="357" height="42" rx="10" fill="#08172E" stroke="#1E3A8A" />
+      <text x="178" y="26" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#38BDF8" text-anchor="middle">★ 55+ AirGen Cadets Trained Here</text>
+    </g>
+  </g>
+
+  <!-- BASE 2: SOUTH AFRICA (JOHANNESBURG) -->
+  <g transform="translate(515, 230)" filter="url(#shadow4)">
+    <rect width="405" height="500" rx="20" fill="#0D2244" stroke="#1E3A8A" stroke-width="1.5" />
+
+    <rect x="2" y="2" width="401" height="150" rx="18" fill="#091830" />
+    <g transform="translate(24, 24)">
+      <rect width="140" height="28" rx="6" fill="#047857" />
+      <text x="70" y="19" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">🇿🇦 SOUTH AFRICA</text>
+    </g>
+    <g transform="translate(275, 24)">
+      <rect width="105" height="28" rx="6" fill="#07152B" stroke="#10B981" stroke-width="1" />
+      <text x="52" y="19" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle">⚡ High ROI Base</text>
+    </g>
+
+    <text x="24" y="105" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="900" fill="#FFFFFF">Johannesburg Base</text>
+    <text x="24" y="128" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#38BDF8">SACAA &amp; DGCA Aligned Flight Training</text>
+
+    <g transform="translate(24, 180)" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+      <text x="0" y="0" font-weight="700" fill="#FFFFFF">Primary Training Aircraft:</text>
+      <text x="0" y="20" fill="#94A3B8">Cessna 172 &amp; Piper Archer PA-28</text>
+      <line x1="0" y1="35" x2="357" y2="35" stroke="#1E3A8A" />
+
+      <text x="0" y="55" font-weight="700" fill="#FFFFFF">Multi-Engine Aircraft:</text>
+      <text x="0" y="75" fill="#94A3B8">Tecnam P2006T &amp; Piper Seneca III</text>
+      <line x1="0" y1="90" x2="357" y2="90" stroke="#1E3A8A" />
+
+      <text x="0" y="110" font-weight="700" fill="#FFFFFF">Duration to 200 Flying Hours:</text>
+      <text x="0" y="130" fill="#10B981" font-weight="700">8 - 10 Months (Cost-Effective Pathway)</text>
+      <line x1="0" y1="145" x2="357" y2="145" stroke="#1E3A8A" />
+
+      <text x="0" y="165" font-weight="700" fill="#FFFFFF">Student Living &amp; Safety:</text>
+      <text x="0" y="185" fill="#94A3B8">Secure pilot campus accommodation, daily shuttle to flight line, 24/7 warden.</text>
+    </g>
+
+    <g transform="translate(24, 435)">
+      <rect width="357" height="42" rx="10" fill="#08172E" stroke="#1E3A8A" />
+      <text x="178" y="26" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#10B981" text-anchor="middle">✓ 25+ AirGen Cadets Trained Here</text>
+    </g>
+  </g>
+
+  <!-- BASE 3: INDIA (GROUND SCHOOL & CBT HEADQUARTERS) -->
+  <g transform="translate(950, 230)" filter="url(#shadow4)">
+    <rect width="405" height="500" rx="20" fill="#0D2244" stroke="#1E3A8A" stroke-width="1.5" />
+
+    <rect x="2" y="2" width="401" height="150" rx="18" fill="#091830" />
+    <g transform="translate(24, 24)">
+      <rect width="95" height="28" rx="6" fill="#D97706" />
+      <text x="47" y="19" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">🇮🇳 INDIA</text>
+    </g>
+    <g transform="translate(275, 24)">
+      <rect width="105" height="28" rx="6" fill="#07152B" stroke="#38BDF8" stroke-width="1" />
+      <text x="52" y="19" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle">✈️ Theory HQ</text>
+    </g>
+
+    <text x="24" y="105" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="900" fill="#FFFFFF">AirGen Flight Academy</text>
+    <text x="24" y="128" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#38BDF8">Hyderabad &amp; New Delhi Centers</text>
+
+    <g transform="translate(24, 180)" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+      <text x="0" y="0" font-weight="700" fill="#FFFFFF">Simulators &amp; Cockpit Labs:</text>
+      <text x="0" y="20" fill="#94A3B8">ALSIM ALX &amp; Level 5 Flight Training Devices</text>
+      <line x1="0" y1="35" x2="357" y2="35" stroke="#1E3A8A" />
+
+      <text x="0" y="55" font-weight="700" fill="#FFFFFF">Ground Training Curriculum:</text>
+      <text x="0" y="75" fill="#94A3B8">5 DGCA Subjects + RTR(A) + Area 100 KSA</text>
+      <line x1="0" y1="90" x2="357" y2="90" stroke="#1E3A8A" />
+
+      <text x="0" y="110" font-weight="700" fill="#FFFFFF">Faculty &amp; Mentors:</text>
+      <text x="0" y="130" fill="#38BDF8" font-weight="700">Active Senior Airline Captains &amp; DGCA Examiners</text>
+      <line x1="0" y1="145" x2="357" y2="145" stroke="#1E3A8A" />
+
+      <text x="0" y="165" font-weight="700" fill="#FFFFFF">License Conversion Wing:</text>
+      <text x="0" y="185" fill="#94A3B8">End-to-end DGCA CPL license conversion paperwork &amp; Indian recency flights.</text>
+    </g>
+
+    <g transform="translate(24, 435)">
+      <rect width="357" height="42" rx="10" fill="#08172E" stroke="#1E3A8A" />
+      <text x="178" y="26" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#FBBF24" text-anchor="middle">★ 80+ Airline Pilots Passed Out</text>
+    </g>
+  </g>
+
+  <!-- Bottom Strip -->
+  <g transform="translate(80, 750)">
+    <rect width="1280" height="80" rx="16" fill="#0B1E3B" stroke="#1E3A8A" stroke-width="1" />
+    <g transform="translate(40, 26)">
+      <circle cx="14" cy="14" r="10" fill="#10B981" />
+      <text x="35" y="19" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Parents Reassurance Guarantee:</text>
+      <text x="270" y="19" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="400" fill="#94A3B8">All international flight schools are directly inspected by AirGen founders. Cadets travel with dedicated batch coordinators.</text>
+    </g>
+    <g transform="translate(1050, 16)">
+      <rect width="190" height="48" rx="8" fill="url(#goldGrad4)" />
+      <text x="95" y="29" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="13" fill="#071224" text-anchor="middle">Explore Base Tours →</text>
+    </g>
+  </g>
+
+  <!-- Slide Footer Watermark Label -->
+  <g transform="translate(80, 860)">
+    <text x="0" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" letter-spacing="1.5">AIRGEN AVIATION • SCREEN 04: GLOBAL FLIGHT TRAINING FLEET &amp; BASES</text>
+    <text x="1280" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="end">CONFIDENTIAL DESIGN JURY PRESENTATION</text>
+  </g>
+</svg>

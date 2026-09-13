@@ -1,0 +1,255 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071224" />
+      <stop offset="50%" stop-color="#0A1D3C" />
+      <stop offset="100%" stop-color="#040C1A" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <filter id="shadow5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1440" height="900" fill="url(#bgGrad5)" />
+
+  <!-- Ambient Glows -->
+  <circle cx="300" cy="300" r="300" fill="#F59E0B" opacity="0.08" filter="blur(90px)" />
+  <circle cx="1100" cy="400" r="350" fill="#0284C7" opacity="0.09" filter="blur(90px)" />
+
+  <!-- Top Header Nav -->
+  <g transform="translate(80, 24)">
+    <rect width="1280" height="64" rx="16" fill="#0D2245" fill-opacity="0.7" stroke="#1E3A8A" stroke-width="1" />
+    
+    <g transform="translate(24, 16)">
+      <path d="M0 16L14 4L28 16L14 12L0 16Z" fill="url(#goldGrad5)" />
+      <path d="M4 22L14 14L24 22L14 19L4 22Z" fill="url(#cyanGrad5)" />
+      <circle cx="14" cy="11" r="3" fill="#FFFFFF" />
+      <text x="38" y="22" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="1">AIRGEN</text>
+      <text x="135" y="22" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#38BDF8" letter-spacing="2">AVIATION</text>
+    </g>
+
+    <g transform="translate(380, 36)" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">
+      <text x="0" y="0">Overview</text>
+      <text x="90" y="0">Pilot Flightpath</text>
+      <text x="210" y="0">12th Eligibility</text>
+      <text x="330" y="0">Global Bases</text>
+      <text x="445" y="0" fill="#38BDF8" font-weight="700">80+ Alumni</text>
+      <text x="545" y="0">Parent Guide</text>
+    </g>
+
+    <g transform="translate(1060, 12)">
+      <rect width="195" height="40" rx="8" fill="url(#goldGrad5)" />
+      <text x="97" y="25" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#071224" text-anchor="middle">Book Pilot Assessment</text>
+    </g>
+  </g>
+
+  <!-- Section Title -->
+  <g transform="translate(80, 115)">
+    <rect width="240" height="26" rx="13" fill="#0E2852" stroke="#FBBF24" stroke-width="1" />
+    <text x="120" y="17" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#FBBF24" text-anchor="middle" letter-spacing="1">PROOF OF OUTCOMES</text>
+
+    <text x="0" y="60" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="-0.5">
+      The Hall of Wings: 80+ Graduated Airline Pilots
+    </text>
+    <text x="0" y="88" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="15" fill="#94A3B8">
+      From high school classrooms to commercial airline command. Meet the cadets who trusted AirGen’s structured training.
+    </text>
+  </g>
+
+  <!-- 3 Alumni Success Cards Grid -->
+  
+  <!-- ALUMNI CARD 1: IndiGo A320 -->
+  <g transform="translate(80, 230)" filter="url(#shadow5)">
+    <rect width="405" height="430" rx="20" fill="#0D2245" stroke="#1E3A8A" stroke-width="1.5" />
+    
+    <!-- Top Header in Card -->
+    <g transform="translate(24, 24)">
+      <!-- Avatar with Captain Epaulet -->
+      <circle cx="36" cy="36" r="32" fill="#1E3A8A" />
+      <path d="M26 28C26 22 31 18 36 18C41 18 46 22 46 28C46 34 41 38 36 38C31 38 26 34 26 28ZM20 50C20 44 26 41 36 41C46 41 52 44 52 50V54H20V50Z" fill="#FBBF24" />
+      
+      <!-- Name & Role -->
+      <text x="80" y="28" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">Capt. Aarav Singhania</text>
+      <text x="80" y="48" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#38BDF8">First Officer · IndiGo (A320neo)</text>
+
+      <!-- Airline Badge -->
+      <rect x="250" y="4" width="105" height="24" rx="4" fill="#08172D" stroke="#0284C7" />
+      <text x="302" y="20" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="800" fill="#38BDF8" text-anchor="middle">INDIGO</text>
+    </g>
+
+    <line x1="24" y1="95" x2="381" y2="95" stroke="#1E3A8A" />
+
+    <!-- Details Box -->
+    <g transform="translate(24, 115)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#94A3B8">
+      <text x="0" y="0">Joined AirGen:</text>
+      <text x="140" y="0" font-weight="700" fill="#CBD5E1">After 12th CBSE (Delhi)</text>
+
+      <text x="0" y="26">Flying Base:</text>
+      <text x="140" y="26" font-weight="700" fill="#CBD5E1">Phoenix, USA (210 Hours)</text>
+
+      <text x="0" y="52">Time to Airline Line:</text>
+      <text x="140" y="52" font-weight="700" fill="#10B981">19 Months Total</text>
+    </g>
+
+    <!-- Testimonial Quote Box -->
+    <g transform="translate(24, 200)">
+      <rect width="357" height="150" rx="12" fill="#091830" stroke="#1E3A8A" />
+      <text x="20" y="32" font-family="Inter, system-ui, sans-serif" font-size="28" fill="#FBBF24">“</text>
+      <text x="20" y="56" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-style="italic" fill="#E2E8F0">
+        <tspan x="20" dy="0">AirGen took full ownership of my DGCA</tspan>
+        <tspan x="20" dy="20">computer number and ground theory.</tspan>
+        <tspan x="20" dy="20">When I landed in Phoenix, the cockpit prep</tspan>
+        <tspan x="20" dy="20">felt completely familiar. Today I’m flying</tspan>
+        <tspan x="20" dy="20">revenue flights on the A320.”</tspan>
+      </text>
+    </g>
+
+    <!-- Tag -->
+    <g transform="translate(24, 370)">
+      <text x="0" y="20" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748B">ALUMNI ID: #AG-1042 • VERIFIED GRADUATE</text>
+    </g>
+  </g>
+
+  <!-- ALUMNI CARD 2: Air India B787 -->
+  <g transform="translate(515, 230)" filter="url(#shadow5)">
+    <rect width="405" height="430" rx="20" fill="#0D2245" stroke="#1E3A8A" stroke-width="1.5" />
+    
+    <g transform="translate(24, 24)">
+      <circle cx="36" cy="36" r="32" fill="#1E3A8A" />
+      <path d="M26 28C26 22 31 18 36 18C41 18 46 22 46 28C46 34 41 38 36 38C31 38 26 34 26 28ZM20 50C20 44 26 41 36 41C46 41 52 44 52 50V54H20V50Z" fill="#FBBF24" />
+      
+      <text x="80" y="28" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">FO Sneha Deshmukh</text>
+      <text x="80" y="48" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#38BDF8">First Officer · Air India (B787)</text>
+
+      <rect x="250" y="4" width="105" height="24" rx="4" fill="#08172D" stroke="#EF4444" />
+      <text x="302" y="20" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="800" fill="#EF4444" text-anchor="middle">AIR INDIA</text>
+    </g>
+
+    <line x1="24" y1="95" x2="381" y2="95" stroke="#1E3A8A" />
+
+    <g transform="translate(24, 115)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#94A3B8">
+      <text x="0" y="0">Joined AirGen:</text>
+      <text x="140" y="0" font-weight="700" fill="#CBD5E1">After 12th State Board (Mumbai)</text>
+
+      <text x="0" y="26">Flying Base:</text>
+      <text x="140" y="26" font-weight="700" fill="#CBD5E1">South Africa Base (220 Hours)</text>
+
+      <text x="0" y="52">Time to Airline Line:</text>
+      <text x="140" y="52" font-weight="700" fill="#10B981">18 Months Total</text>
+    </g>
+
+    <g transform="translate(24, 200)">
+      <rect width="357" height="150" rx="12" fill="#091830" stroke="#1E3A8A" />
+      <text x="20" y="32" font-family="Inter, system-ui, sans-serif" font-size="28" fill="#FBBF24">“</text>
+      <text x="20" y="56" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-style="italic" fill="#E2E8F0">
+        <tspan x="20" dy="0">My parents were very nervous about sending</tspan>
+        <tspan x="20" dy="20">me abroad. AirGen arranged direct calls with</tspan>
+        <tspan x="20" dy="20">senior captains and managed full student housing.</tspan>
+        <tspan x="20" dy="20">The airline interview simulator drills were the</tspan>
+        <tspan x="20" dy="20">exact reason I aced Air India’s induction.”</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(24, 370)">
+      <text x="0" y="20" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748B">ALUMNI ID: #AG-1078 • VERIFIED GRADUATE</text>
+    </g>
+  </g>
+
+  <!-- ALUMNI CARD 3: Akasa Air B737 -->
+  <g transform="translate(950, 230)" filter="url(#shadow5)">
+    <rect width="405" height="430" rx="20" fill="#0D2245" stroke="#1E3A8A" stroke-width="1.5" />
+    
+    <g transform="translate(24, 24)">
+      <circle cx="36" cy="36" r="32" fill="#1E3A8A" />
+      <path d="M26 28C26 22 31 18 36 18C41 18 46 22 46 28C46 34 41 38 36 38C31 38 26 34 26 28ZM20 50C20 44 26 41 36 41C46 41 52 44 52 50V54H20V50Z" fill="#FBBF24" />
+      
+      <text x="80" y="28" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">FO Rohan Varma</text>
+      <text x="80" y="48" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#38BDF8">First Officer · Akasa Air (B737 MAX)</text>
+
+      <rect x="250" y="4" width="105" height="24" rx="4" fill="#08172D" stroke="#F97316" />
+      <text x="302" y="20" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="800" fill="#F97316" text-anchor="middle">AKASA AIR</text>
+    </g>
+
+    <line x1="24" y1="95" x2="381" y2="95" stroke="#1E3A8A" />
+
+    <g transform="translate(24, 115)" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#94A3B8">
+      <text x="0" y="0">Joined AirGen:</text>
+      <text x="140" y="0" font-weight="700" fill="#CBD5E1">After 12th NIOS Math stream</text>
+
+      <text x="0" y="26">Flying Base:</text>
+      <text x="140" y="26" font-weight="700" fill="#CBD5E1">Phoenix, USA (205 Hours)</text>
+
+      <text x="0" y="52">Time to Airline Line:</text>
+      <text x="140" y="52" font-weight="700" fill="#10B981">20 Months Total</text>
+    </g>
+
+    <g transform="translate(24, 200)">
+      <rect width="357" height="150" rx="12" fill="#091830" stroke="#1E3A8A" />
+      <text x="20" y="32" font-family="Inter, system-ui, sans-serif" font-size="28" fill="#FBBF24">“</text>
+      <text x="20" y="56" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-style="italic" fill="#E2E8F0">
+        <tspan x="20" dy="0">I didn’t take Math in 11th, so other schools</tspan>
+        <tspan x="20" dy="20">rejected me. AirGen guided me through NIOS</tspan>
+        <tspan x="20" dy="20">equivalence without losing a single semester.</tspan>
+        <tspan x="20" dy="20">No false promises, completely costed day one.</tspan>
+        <tspan x="20" dy="20">Best decision of my life.”</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(24, 370)">
+      <text x="0" y="20" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748B">ALUMNI ID: #AG-1065 • VERIFIED GRADUATE</text>
+    </g>
+  </g>
+
+  <!-- Bottom Airline Logos Bar -->
+  <g transform="translate(80, 685)">
+    <rect width="1280" height="135" rx="16" fill="#08172D" stroke="#1E3A8A" stroke-width="1" />
+    <text x="40" y="35" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1">
+      WHERE AIRGEN CADETS ARE ACTIVELY FLYING AS FIRST OFFICERS &amp; CAPTAINS:
+    </text>
+
+    <!-- Airline Badges -->
+    <g transform="translate(40, 55)">
+      <!-- Badge 1: IndiGo -->
+      <rect width="180" height="50" rx="8" fill="#0B1E3E" stroke="#1E3A8A" />
+      <text x="90" y="32" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="900" fill="#38BDF8" text-anchor="middle">IndiGo</text>
+
+      <!-- Badge 2: Air India -->
+      <rect x="200" width="180" height="50" rx="8" fill="#0B1E3E" stroke="#1E3A8A" />
+      <text x="290" y="32" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="900" fill="#EF4444" text-anchor="middle">Air India</text>
+
+      <!-- Badge 3: Akasa Air -->
+      <rect x="400" width="180" height="50" rx="8" fill="#0B1E3E" stroke="#1E3A8A" />
+      <text x="490" y="32" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="900" fill="#F97316" text-anchor="middle">Akasa Air</text>
+
+      <!-- Badge 4: SpiceJet -->
+      <rect x="600" width="180" height="50" rx="8" fill="#0B1E3E" stroke="#1E3A8A" />
+      <text x="690" y="32" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="900" fill="#EA580C" text-anchor="middle">SpiceJet</text>
+
+      <!-- Badge 5: Air India Express -->
+      <rect x="800" width="200" height="50" rx="8" fill="#0B1E3E" stroke="#1E3A8A" />
+      <text x="900" y="32" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="900" fill="#FBBF24" text-anchor="middle">Air India Express</text>
+
+      <!-- Badge 6: Middle East / Charter -->
+      <rect x="1020" width="180" height="50" rx="8" fill="#0B1E3E" stroke="#1E3A8A" />
+      <text x="1110" y="32" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#94A3B8" text-anchor="middle">Global Charters</text>
+    </g>
+  </g>
+
+  <!-- Slide Footer Watermark Label -->
+  <g transform="translate(80, 860)">
+    <text x="0" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" letter-spacing="1.5">AIRGEN AVIATION • SCREEN 05: 80+ ALUMNI HALL OF WINGS &amp; PLACEMENTS</text>
+    <text x="1280" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="end">CONFIDENTIAL DESIGN JURY PRESENTATION</text>
+  </g>
+</svg>
