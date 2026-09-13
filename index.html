@@ -545,7 +545,7 @@
         function openJourneyModal(type) {
             const data = journeyData[type];
             document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalBg').style.backgroundImage = url('');
+            document.getElementById('modalBg').style.backgroundImage = "url('" + data.img + "')";
             
             const modulesContainer = document.getElementById('modalModules');
             modulesContainer.innerHTML = '';
