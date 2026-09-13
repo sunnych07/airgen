@@ -80,6 +80,19 @@
         /* Glow Text */
         .text-glow { text-shadow: 0 0 20px rgba(56, 189, 248, 0.5); }
     </style>
+
+    <style>
+        .light-mode {
+            filter: invert(1) hue-rotate(180deg);
+            background: #ffffff;
+        }
+        .light-mode img, 
+        .light-mode .glass-card div[style*="background: url"], 
+        .light-mode #modalBg { 
+            filter: invert(1) hue-rotate(180deg); 
+        }
+    </style>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
     <div class="bg-container"></div>
@@ -491,12 +504,12 @@
 
     
     <!-- FLOATING CHAT BUTTON -->
-    <div id="floatingChatBtn" onclick="toggleChat()" style="position: fixed; bottom: 30px; right: 30px; background: #38BDF8; color: #030712; padding: 1rem 1.5rem; border-radius: 30px; cursor: pointer; font-weight: 800; box-shadow: 0 10px 25px rgba(56,189,248,0.4); z-index: 999; transition: 0.3s; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div id="floatingChatBtn" onclick="toggleChat()" style="position: fixed; bottom: 30px; right: 30px; background: #38BDF8; color: #030712; padding: 1rem 1.5rem; border-radius: 30px; cursor: pointer; font-weight: 800; box-shadow: 0 10px 25px rgba(56,189,248,0.4); z-index: 999999; transition: 0.3s; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
         <span style="font-size: 1.2rem;">💬</span> For Details
     </div>
 
     <!-- CHAT MODAL -->
-    <div id="chatModal" style="display: none; position: fixed; bottom: 90px; right: 30px; width: 350px; background: #0f172a; border: 1px solid rgba(56,189,248,0.3); border-radius: 1rem; box-shadow: 0 25px 50px rgba(0,0,0,0.5); z-index: 999; overflow: hidden; flex-direction: column;">
+    <div id="chatModal" style="display: none; position: fixed; bottom: 90px; right: 30px; width: 350px; background: #0f172a; border: 1px solid rgba(56,189,248,0.3); border-radius: 1rem; box-shadow: 0 25px 50px rgba(0,0,0,0.5); z-index: 999999; overflow: hidden; flex-direction: column;">
         <div style="background: rgba(56,189,248,0.1); padding: 1rem; border-bottom: 1px solid rgba(56,189,248,0.2); display: flex; justify-content: space-between; align-items: center;">
             <h4 style="color: white; margin: 0; font-weight: 700;">Message Admin</h4>
             <button onclick="toggleChat()" style="background: none; border: none; color: #94A3B8; cursor: pointer; font-size: 1.5rem; line-height: 1;">×</button>
@@ -670,6 +683,73 @@
 
         function closeJourneyModal() {
             document.getElementById('journeyModal').style.display = 'none';
+        }
+
+        
+        
+        async function payWithRazorpay(courseName, amountInRupees, btnId) {
+            if (!isLoggedIn) {
+                alert("Please login first to enroll and pay.");
+                showPage('register');
+                return;
+            }
+            
+            const btn = document.getElementById(btnId);
+            const originalText = btn.innerText;
+            btn.innerText = "Processing secure payment...";
+            btn.disabled = true;
+            
+            try {
+                // 1. Get Order ID from Python Backend
+                const res = await fetch('/api/create_order', {
+                    method: 'POST',
+                    body: JSON.stringify({ amount: amountInRupees * 100 }) 
+                });
+                const data = await res.json();
+                
+                if (data.success) {
+                    // 2. Open Razorpay Checkout
+                    var options = {
+                        "key": "rzp_live_TZ4lxunOpCOa6H", 
+                        "amount": amountInRupees * 100,
+                        "currency": "INR",
+                        "name": "Airgen Aviation",
+                        "description": "Enrollment for: " + courseName,
+                        "image": "https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=200",
+                        "order_id": data.order_id,
+                        "handler": function (response){
+                            alert("Payment Successful! Welcome to Airgen Aviation.\nPayment ID: " + response.razorpay_payment_id);
+                            btn.innerText = "Enrolled ✓";
+                            btn.style.background = "#10B981";
+                            btn.style.color = "white";
+                        },
+                        "prefill": {
+                            "email": loggedInEmail
+                        },
+                        "theme": {
+                            "color": "#E11D48"
+                        }
+                    };
+                    var rzp1 = new Razorpay(options);
+                    rzp1.on('payment.failed', function (response){
+                        alert("Payment Failed: " + response.error.description);
+                    });
+                    rzp1.open();
+                } else {
+                    alert("Failed to initialize payment gateway.");
+                }
+            } catch (e) {
+                alert("Network error. Please try again.");
+            } finally {
+                if(btn.innerText !== "Enrolled ✓") {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
+            }
+        }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('light-mode');
         }
 
         function toggleChat() {
