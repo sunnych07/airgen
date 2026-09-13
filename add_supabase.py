@@ -1,4 +1,19 @@
-from http.server import BaseHTTPRequestHandler
+﻿import re
+
+# 1. Update index.html to send Name and Phone
+with open(r'C:\airgen\index.html', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# Fix requestOTP to send name and phone
+old_fetch = "body: JSON.stringify({ email: email, otp: generatedOTP })"
+new_fetch = "body: JSON.stringify({ email: email, otp: generatedOTP, name: name, phone: phone })"
+content = content.replace(old_fetch, new_fetch)
+
+with open(r'C:\airgen\index.html', 'w', encoding='utf-8') as f:
+    f.write(content)
+
+# 2. Update api/send_email.py to save to Supabase
+api_script = '''from http.server import BaseHTTPRequestHandler
 import json
 import smtplib
 from email.mime.text import MIMEText
@@ -66,3 +81,9 @@ class handler(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps({'success': False, 'error': str(e)}).encode('utf-8'))
+'''
+
+with open(r'C:\airgen\api\send_email.py', 'w', encoding='utf-8') as f:
+    f.write(api_script)
+
+print("Successfully integrated Supabase logic!")
