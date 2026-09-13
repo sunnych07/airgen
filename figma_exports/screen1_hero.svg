@@ -264,4 +264,15 @@
     <text x="0" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" letter-spacing="1.5">AIRGEN AVIATION • SCREEN 01: HERO &amp; STRATEGIC VALUE PROPOSITION</text>
     <text x="1280" y="14" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="end">CONFIDENTIAL DESIGN JURY PRESENTATION</text>
   </g>
+  <!-- Top Right Auth Buttons -->
+  <g transform="translate(1120, 35)">
+    <!-- Login Button -->
+    <rect width="90" height="40" rx="8" fill="none" stroke="#38BDF8" stroke-width="1.5" />
+    <text x="45" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#38BDF8" text-anchor="middle">Login</text>
+    
+    <!-- Sign Up Button -->
+    <rect x="110" width="110" height="40" rx="8" fill="#FBBF24" />
+    <text x="165" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">Sign Up</text>
+  </g>
 </svg>
+
