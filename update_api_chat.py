@@ -1,11 +1,10 @@
-from http.server import BaseHTTPRequestHandler
-import json
-import smtplib
-from email.mime.text import MIMEText
-import os
-import urllib.request
+﻿import re
 
-class handler(BaseHTTPRequestHandler):
+with open(r'C:\airgen\api\send_email.py', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# Refactor the POST logic to support 'admin_message'
+new_post_logic = """class handler(BaseHTTPRequestHandler):
     def do_POST(self):
         try:
             content_length = int(self.headers.get('Content-Length', 0))
@@ -31,9 +30,7 @@ class handler(BaseHTTPRequestHandler):
                 # Sending a message TO the admin FROM the user
                 user_msg = data.get('message', '')
                 
-                msg = MIMEText(f"Message from Authenticated User ({email_to}):
-
-{user_msg}")
+                msg = MIMEText(f"Message from Authenticated User ({email_to}):\\n\\n{user_msg}")
                 msg["Subject"] = f"New Inquiry from {email_to}"
                 msg["From"] = EMAIL_ADDRESS
                 msg["To"] = EMAIL_ADDRESS # Sending to admin
@@ -88,4 +85,11 @@ class handler(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps({'success': False, 'error': str(e)}).encode('utf-8'))
+"""
 
+pattern = r'class handler\(BaseHTTPRequestHandler\):.*?except Exception as e:.*?self\.wfile\.write\(json\.dumps\(\{\'success\': False, \'error\': str\(e\)\}\)\.encode\(\'utf-8\'\)\)'
+content = re.sub(pattern, new_post_logic, content, flags=re.DOTALL)
+
+with open(r'C:\airgen\api\send_email.py', 'w', encoding='utf-8') as f:
+    f.write(content)
+print("Updated Backend.")
