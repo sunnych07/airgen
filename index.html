@@ -1,1083 +1,325 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AirGen Aviation — From 12th Grade to Airline Command</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              dark: '#071224',
-              surface: '#0A1D3C',
-              card: '#0D2245',
-              border: '#1E3A8A',
-              cyan: '#38BDF8',
-              sky: '#0284C7',
-              gold: '#FBBF24',
-              goldDark: '#D97706',
-              emerald: '#10B981',
-            }
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-          }
+    <meta charset="UTF-8">
+    <title>AirGen Aviation - Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
+        
+        body { 
+            background-color: #050B14; 
+            color: white; 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            overflow-x: hidden;
         }
-      }
-    }
-  </script>
-  <style>
-    body {
-      background-color: #050E1D;
-      color: #F8FAFC;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
-    }
-    .hud-grid {
-      background-image: linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
-      background-size: 80px 80px;
-    }
-    .glow-cyan {
-      box-shadow: 0 0 40px -10px rgba(56, 189, 248, 0.3);
-    }
-    .glow-gold {
-      box-shadow: 0 0 40px -10px rgba(251, 191, 36, 0.3);
-    }
-    .slide-frame {
-      aspect-ratio: 16 / 10;
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-  </style>
+
+        /* Animated Background */
+        .bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: linear-gradient(to bottom, rgba(5,11,20,0.8), rgba(5,11,20,1)), 
+                        url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            z-index: -1;
+            transform: scale(1.05);
+            animation: slowPan 30s infinite alternate linear;
+        }
+        @keyframes slowPan { 0% { transform: scale(1.05) translate(0, 0); } 100% { transform: scale(1.1) translate(-20px, -10px); } }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            transform: translateY(0);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover { border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 40px rgba(56, 189, 248, 0.15); }
+
+        .hidden-section { display: none !important; opacity: 0; }
+        .fade-in { animation: fadeIn 0.5s forwards ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Inputs & Buttons */
+        .input-field { 
+            width: 100%; padding: 1rem; border-radius: 0.75rem; 
+            background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255,255,255,0.1); 
+            color: white; margin-bottom: 1.25rem; transition: 0.3s;
+        }
+        .input-field:focus { outline: none; border-color: #38BDF8; background: rgba(0,0,0,0.5); box-shadow: 0 0 15px rgba(56,189,248,0.2); }
+        
+        .btn-primary { 
+            width: 100%; padding: 1rem; border-radius: 0.75rem; 
+            background: linear-gradient(90deg, #FBBF24, #F59E0B); 
+            color: black; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+            cursor: pointer; transition: 0.3s; border: none;
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 25px rgba(245, 158, 11, 0.5); }
+        .btn-loading { opacity: 0.7; cursor: wait; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+
+        .nav-header {
+            padding: 1.5rem 4%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 11, 20, 0.8); backdrop-filter: blur(10px);
+            position: fixed; width: 100%; top: 0; z-index: 50;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .main-content { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; }
+
+        /* Glow Text */
+        .text-glow { text-shadow: 0 0 20px rgba(56, 189, 248, 0.5); }
+    </style>
 </head>
-<body class="antialiased selection:bg-cyan-500 selection:text-white">
+<body>
+    <div class="bg-container"></div>
 
-  <!-- TOP TOOLBAR FOR JURY & DESIGNERS: SLIDE SWITCHER -->
-  <div class="sticky top-0 z-50 bg-[#061224]/90 backdrop-blur-md border-b border-brand-border/60 px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-xl">
-    <div class="flex items-center gap-3">
-      <div class="flex items-center gap-2">
-        <svg class="w-6 h-6 text-brand-gold" viewBox="0 0 28 28" fill="none">
-          <path d="M0 16L14 4L28 16L14 12L0 16Z" fill="#FBBF24"/>
-          <path d="M4 22L14 14L24 22L14 19L4 22Z" fill="#38BDF8"/>
-          <circle cx="14" cy="11" r="3" fill="#FFFFFF"/>
-        </svg>
-        <span class="font-extrabold text-white text-base tracking-wider">AIRGEN <span class="text-brand-cyan text-xs font-semibold">UI/UX MASTER</span></span>
-      </div>
-      <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-        80+ Airline Alumni
-      </span>
+    
+    <style>
+        .nav-link { color: #94A3B8; text-decoration: none; transition: 0.3s; }
+        .nav-link:hover { color: white; }
+        
+        .logo-svg { width: 35px; height: 35px; margin-right: 12px; }
+        .logo-wing-w1 { fill: white; }
+        .logo-wing-r { fill: #E11D48; }
+        .logo-wing-w2 { fill: white; }
+    </style>
+    
+    <nav class="nav-header" data-aos="fade-down" style="padding: 1rem 4%; background: #030712; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <!-- Logo -->
+        <div style="display: flex; align-items: center; cursor: pointer;" onclick="showPage('home')">
+            <svg class="logo-svg" viewBox="0 0 100 100">
+                <polygon points="20,80 80,20 80,35 35,80" class="logo-wing-w1" />
+                <polygon points="10,60 50,20 50,35 25,60" class="logo-wing-r" />
+                <polygon points="10,95 95,10 95,25 25,95" class="logo-wing-r" />
+            </svg>
+            <div style="line-height: 1;">
+                <div style="font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px;">
+                    <span style="color: white;">Air</span><span style="color: #E11D48;">Gen</span>
+                </div>
+                <div style="font-size: 0.65rem; color: white; letter-spacing: 0.4em; margin-top: 2px;">AVIATION</div>
+            </div>
+        </div>
+
+        <!-- Center Links -->
+        <div style="display: flex; gap: 2.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px;">
+            <a href="#" onclick="showPage('about')" class="nav-link">ABOUT</a>
+            <a href="#" onclick="showPage('journey')" class="nav-link">JOURNEY</a>
+            <a href="#" onclick="showPage('cadets')" class="nav-link">CADETS</a>
+            <a href="#" onclick="showPage('founders')" class="nav-link">FOUNDERS</a>
+            <a href="#" onclick="showPage('courses')" class="nav-link">COURSES</a>
+        </div>
+
+        <!-- Right Buttons -->
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button style="border: 1px solid #334155; background: transparent; padding: 0.5rem 1rem; border-radius: 20px; color: white; font-size: 0.75rem; font-weight: 600; cursor: pointer;">&amp;#9728; DARK &amp;#9662;</button>
+            <button onclick="showPage('register')" style="border: 1px solid #E11D48; background: rgba(225,29,72,0.05); padding: 0.6rem 1.5rem; border-radius: 8px; color: white; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: 0.3s;" onmouseover="this.style.background='#E11D48'" onmouseout="this.style.background='rgba(225,29,72,0.05)'">ENQUIRE &amp;#8599;</button>
+        </div>
+    </nav>
+
+
+    <div class="main-content">
+        <!-- HOME / HERO PAGE -->
+        <div id="home" class="page-section fade-in" style="text-align: center; max-width: 900px; margin: 0 auto; padding: 2rem;">
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <div style="display: inline-block; padding: 0.5rem 1rem; border-radius: 2rem; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.3); color: #38BDF8; font-weight: 600; letter-spacing: 1px; margin-bottom: 2rem; font-size: 0.85rem;">
+                    DGCA APPROVED FLIGHT TRAINING
+                </div>
+                <h1 style="font-size: 4.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem;" class="text-glow">
+                    Command The <br><span style="color: #38BDF8;">Flight Deck.</span>
+                </h1>
+                <p style="font-size: 1.25rem; color: #94A3B8; margin-bottom: 3rem; font-weight: 300;">
+                    From zero experience to airline-ready in 18 months. Join 80+ alumni flying for major airlines with our global training bases in USA, South Africa & India.
+                </p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                    <button onclick="showPage('register')" class="btn-primary" style="width: 200px;">Start Application</button>
+                    <button onclick="showPage('login')" style="width: 200px; padding: 1rem; border-radius: 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); font-weight: 600; transition: 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">Student Portal</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- ABOUT PAGE -->
+        <div id="about" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem; text-align: center;">
+            <div class="glass-card"><h2 style="font-size: 2rem; color: white; font-weight: 800;">About AirGen</h2><p style="color: #94A3B8; margin-top: 1rem;">Information about the academy will go here.</p></div>
+        </div>
+        <!-- JOURNEY PAGE -->
+        <div id="journey" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem; text-align: center;">
+            <div class="glass-card"><h2 style="font-size: 2rem; color: white; font-weight: 800;">The Pilot Journey</h2><p style="color: #94A3B8; margin-top: 1rem;">18-month roadmap details go here.</p></div>
+        </div>
+        <!-- CADETS PAGE -->
+        <div id="cadets" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem; text-align: center;">
+            <div class="glass-card"><h2 style="font-size: 2rem; color: white; font-weight: 800;">Our Cadets</h2><p style="color: #94A3B8; margin-top: 1rem;">Hall of Wings and alumni placement details go here.</p></div>
+        </div>
+        <!-- FOUNDERS PAGE -->
+        <div id="founders" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem; text-align: center;">
+            <div class="glass-card"><h2 style="font-size: 2rem; color: white; font-weight: 800;">Founders</h2><p style="color: #94A3B8; margin-top: 1rem;">Captain Manas Teja & Leadership team details go here.</p></div>
+        </div>
+        <!-- COURSES PAGE -->
+        <div id="courses" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem; text-align: center;">
+            <div class="glass-card"><h2 style="font-size: 2rem; color: white; font-weight: 800;">Training Courses</h2><p style="color: #94A3B8; margin-top: 1rem;">CPL, Ground Classes, and Type Rating details go here.</p></div>
+        </div>
+        <!-- REGISTER PAGE -->
+
+        <div id="register" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem;">
+            <div class="glass-card">
+                <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center; color: white;">Create Account</h2>
+                <p style="text-align: center; color: #94A3B8; margin-bottom: 2rem; font-size: 0.95rem;">Enter your details to begin admissions.</p>
+                
+                <input type="text" id="regName" class="input-field" placeholder="Full Name (As per Passport)">
+                <input type="text" id="regPhone" class="input-field" placeholder="WhatsApp Number">
+                <input type="email" id="regEmail" class="input-field" placeholder="Email Address">
+                
+                <div style="display: flex; align-items: center; margin-bottom: 2rem; color: #94A3B8;">
+                    <input type="checkbox" id="regTerms" style="margin-right: 0.75rem; width: 1.2rem; height: 1.2rem; accent-color: #38BDF8;">
+                    <label style="font-size: 0.9rem;">I agree to the <a href="#" onclick="showPage('terms')" style="color: #38BDF8; font-weight: 600;">Terms & Conditions</a></label>
+                </div>
+                <button id="regBtn" onclick="requestOTP()" class="btn-primary">Verify Email</button>
+            </div>
+        </div>
+
+        <!-- OTP PAGE -->
+        <div id="otp" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem;">
+            <div class="glass-card">
+                <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center; color: white;">Check Your Inbox</h2>
+                <p style="text-align: center; color: #94A3B8; margin-bottom: 2rem; font-size: 0.95rem;">We sent a secure 6-digit code to your email.</p>
+                <input type="text" id="otpInput" class="input-field" placeholder="? ? ? ? ? ?" style="text-align: center; letter-spacing: 1rem; font-size: 1.75rem; font-weight: 800; padding: 1.5rem;">
+                <button id="verifyBtn" onclick="verifyOTP()" class="btn-primary">Authenticate</button>
+            </div>
+        </div>
+
+        <!-- SUCCESS PAGE -->
+        <div id="success" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem;">
+            <div class="glass-card" style="text-align: center; border-color: #10B981; box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);">
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #10B981; box-shadow: 0 0 20px rgba(16,185,129,0.4);">
+       </div>
+                <h2 style="font-size: 2rem; font-weight: 800; color: #10B981; margin-bottom: 1rem;">Verified!</h2>
+                <p style="color: #94A3B8; font-size: 1.1rem; line-height: 1.6;">Your pilot profile is securely authenticated and ready for the admissions process.</p>
+                <br>
+                <button onclick="showPage('home')" class="btn-primary" style="background: #10B981; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); color: white;">Enter Dashboard</button>
+            </div>
+        </div>
+
+        <!-- LOGIN PAGE -->
+        <div id="login" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem;">
+            <div class="glass-card">
+                <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center; color: white;">Student Login</h2>
+                <p style="text-align: center; color: #94A3B8; margin-bottom: 2rem; font-size: 0.95rem;">Access your training dashboard via OTP.</p>
+                <input type="email" id="loginEmail" class="input-field" placeholder="Registered Email Address">
+                <button id="loginBtn" onclick="requestLoginOTP()" class="btn-primary">Send Secure OTP</button>
+            </div>
+        </div>
+
+        <!-- TERMS PAGE -->
+        <div id="terms" class="page-section hidden-section fade-in" style="width: 100%; padding: 1rem;">
+            <div class="glass-card" style="max-width: 700px;">
+                <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; color: #38BDF8;">Terms & Conditions</h2>
+                <p style="margin-bottom: 1.25rem; color: #cbd5e1; font-weight: 300; line-height: 1.6;"><strong style="color:white; font-weight:600;">1. Acceptance:</strong> By accessing AirGen Aviation, you agree to our policies.</p>
+                <p style="margin-bottom: 1.25rem; color: #cbd5e1; font-weight: 300; line-height: 1.6;"><strong style="color:white; font-weight:600;">2. DGCA Training Compliance:</strong> All flight hours and ground classes meet the strict parameters of DGCA India.</p>
+                <p style="margin-bottom: 2rem; color: #cbd5e1; font-weight: 300; line-height: 1.6;"><strong style="color:white; font-weight:600;">3. Data Privacy:</strong> We implement bank-grade security to ensure your email/phone are only used for authentication.</p>
+                <button onclick="showPage('register')" class="btn-primary">Acknowledge & Return</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Slide Navigation Buttons -->
-    <div class="flex items-center gap-1.5 overflow-x-auto text-xs font-semibold py-1">
-      <button onclick="scrollToSection('screen-hero')" class="px-3 py-1.5 rounded-lg bg-brand-card hover:bg-brand-border text-white border border-brand-border transition-all">
-        1. Hero & Trust
-      </button>
-      <button onclick="scrollToSection('screen-flightpath')" class="px-3 py-1.5 rounded-lg bg-brand-card hover:bg-brand-border text-white border border-brand-border transition-all">
-        2. 5-Stage Flightpath
-      </button>
-      <button onclick="scrollToSection('screen-eligibility')" class="px-3 py-1.5 rounded-lg bg-brand-card hover:bg-brand-border text-white border border-brand-border transition-all">
-        3. 12th Calculator
-      </button>
-      <button onclick="scrollToSection('screen-bases')" class="px-3 py-1.5 rounded-lg bg-brand-card hover:bg-brand-border text-white border border-brand-border transition-all">
-        4. Global Bases
-      </button>
-      <button onclick="scrollToSection('screen-alumni')" class="px-3 py-1.5 rounded-lg bg-brand-card hover:bg-brand-border text-white border border-brand-border transition-all">
-        5. 80+ Alumni
-      </button>
-      <button onclick="scrollToSection('screen-admissions')" class="px-3 py-1.5 rounded-lg bg-brand-card hover:bg-brand-border text-white border border-brand-border transition-all">
-        6. Parents & FAQs
-      </button>
-    </div>
-
-    <!-- Quick Actions -->
-    <div class="flex items-center gap-2">
-      <a href="./figma_exports/screen1_hero.svg" download class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black hover:opacity-90 shadow-md">
-        <span>Download SVGs for Figma</span>
-      </a>
-    </div>
-  </div>
-
-  <main class="hud-grid">
-
-    <!-- ========================================================================= -->
-    <!-- SCREEN 1: HERO & VALUE PROPOSITION -->
-    <!-- ========================================================================= -->
-    <section id="screen-hero" class="relative min-h-[900px] border-b border-brand-border/40 py-12 px-6 lg:px-16 flex flex-col justify-between">
-      
-      <!-- Slide Watermark Top -->
-      <div class="flex items-center justify-between text-xs font-semibold text-slate-500 uppercase tracking-wider mb-6">
-        <span>AIRGEN AVIATION • SCREEN 01: HERO &amp; STRATEGIC VALUE PROPOSITION</span>
-        <span class="text-brand-cyan">Figma Frame Spec: 1440 × 900 px</span>
-      </div>
-
-      <!-- Main Navigation Bar on Slide -->
-      <header class="bg-brand-card/80 backdrop-blur-md border border-brand-border/70 rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-2xl mb-12">
-        <div class="flex items-center gap-3">
-          <svg class="w-8 h-8" viewBox="0 0 28 28" fill="none">
-            <path d="M0 16L14 4L28 16L14 12L0 16Z" fill="#FBBF24"/>
-            <path d="M4 22L14 14L24 22L14 19L4 22Z" fill="#38BDF8"/>
-            <circle cx="14" cy="11" r="3" fill="#FFFFFF"/>
-          </svg>
-          <div>
-            <div class="font-black text-xl text-white tracking-widest leading-none">AIRGEN</div>
-            <div class="text-[10px] font-bold text-brand-cyan tracking-widest">AVIATION ACADEMY</div>
-          </div>
-        </div>
-
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a href="#screen-hero" class="text-brand-cyan font-bold">Overview</a>
-          <a href="#screen-flightpath" class="hover:text-white transition-colors">Pilot Flightpath</a>
-          <a href="#screen-eligibility" class="hover:text-white transition-colors">12th Eligibility</a>
-          <a href="#screen-bases" class="hover:text-white transition-colors">Global Bases</a>
-          <a href="#screen-alumni" class="hover:text-white transition-colors">80+ Alumni</a>
-          <a href="#screen-admissions" class="hover:text-white transition-colors">Parent Guide</a>
-        </nav>
-
-        <div>
-          <button onclick="scrollToSection('screen-admissions')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold text-xs hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all">
-            Book Pilot Assessment
-          </button>
-        </div>
-      </header>
-
-      <!-- Hero Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
-        <!-- Left Content (7 Cols) -->
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-border/40 border border-brand-cyan/40 text-xs font-bold text-slate-200">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            DGCA CADET BATCH 2026 • ADMISSIONS OPEN FOR 12TH PASSOUTS
-          </div>
-
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
-            From 12th Grade To The <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-sky-400 to-blue-500">Airline Flight Deck.</span>
-          </h1>
-
-          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-            AirGen bridges the gap between high school and commercial aviation. Join India’s premier structured pathway: DGCA precision ground school, 200+ global flight hours in the USA & South Africa, and airline first-officer placement.
-          </p>
-
-          <!-- 80+ Alumni Trust Box -->
-          <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-card/90 border border-brand-border max-w-xl">
-            <div class="flex text-amber-400 text-lg">★★★★★</div>
-            <div class="text-xs sm:text-sm">
-              <span class="font-bold text-white">80+ Successfully Graduated Pilots</span>
-              <span class="text-slate-400 block">flying active commercial line with IndiGo, Air India, Akasa Air & SpiceJet.</span>
-            </div>
-          </div>
-
-          <!-- Dual CTAs -->
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button onclick="scrollToSection('screen-eligibility')" class="px-7 py-4 rounded-xl bg-gradient-to-r from-sky-500 to-brand-cyan text-slate-950 font-extrabold text-sm hover:brightness-110 shadow-lg shadow-sky-500/25 transition-all">
-              Check 12th Eligibility →
-            </button>
-            <button onclick="scrollToSection('screen-flightpath')" class="px-7 py-4 rounded-xl bg-brand-surface hover:bg-brand-border/60 text-white font-semibold text-sm border border-brand-cyan/40 transition-all">
-              Explore 5-Stage Flightpath
-            </button>
-          </div>
-
-          <!-- Proof Badges -->
-          <div class="flex flex-wrap items-center gap-6 pt-4 text-xs font-semibold text-slate-400">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
-              DGCA & ICAO Compliant
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
-              Active Airline Captain Mentors
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
-              Day-1 Cost Transparency
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Visual Cockpit & Cadet Card (5 Cols) -->
-        <div class="lg:col-span-5">
-          <div class="relative rounded-3xl bg-gradient-to-b from-brand-surface to-brand-card border-2 border-brand-border p-6 shadow-2xl glow-cyan">
-            
-            <!-- Artificial Horizon Instrument Graphic -->
-            <div class="h-64 rounded-2xl bg-[#061427] border border-brand-border/60 relative overflow-hidden flex items-center justify-center">
-              <div class="absolute inset-0 opacity-20 hud-grid"></div>
-              
-              <!-- Dial Graphic -->
-              <div class="w-48 h-48 rounded-full border-2 border-brand-cyan/80 bg-slate-900/90 relative overflow-hidden flex flex-col justify-center items-center shadow-inner">
-                <!-- Sky & Earth -->
-                <div class="w-full h-1/2 bg-sky-600/70 border-b-2 border-white flex items-center justify-center">
-                  <span class="text-[10px] font-mono text-white/80">PITCH +10°</span>
-                </div>
-                <div class="w-full h-1/2 bg-amber-900/60 flex items-center justify-center">
-                  <span class="text-[10px] font-mono text-white/50">AIRGEN HUD</span>
-                </div>
-                <!-- Crosshair Airplane -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div class="w-24 h-1 bg-amber-400 rounded-full"></div>
-                  <div class="absolute w-3 h-3 bg-amber-400 rounded-full border-2 border-black"></div>
-                </div>
-              </div>
-
-              <!-- Speed & Altitude tapes -->
-              <div class="absolute left-4 top-1/2 -translate-y-1/2 bg-slate-950/80 px-2 py-3 rounded border border-brand-border text-center font-mono">
-                <div class="text-[10px] text-slate-400">IAS</div>
-                <div class="text-sm font-black text-brand-cyan">145</div>
-                <div class="text-[9px] text-slate-500">KTS</div>
-              </div>
-              <div class="absolute right-4 top-1/2 -translate-y-1/2 bg-slate-950/80 px-2 py-3 rounded border border-brand-border text-center font-mono">
-                <div class="text-[10px] text-slate-400">ALT</div>
-                <div class="text-sm font-black text-amber-400">4,500</div>
-                <div class="text-[9px] text-slate-500">FT</div>
-              </div>
-
-              <div class="absolute top-3 left-4 text-[10px] font-bold text-brand-cyan uppercase tracking-wider bg-brand-dark/80 px-2 py-0.5 rounded border border-brand-border">
-                AirGen Simulator Lab
-              </div>
-            </div>
-
-            <!-- Overlaid Alumni Cadet Highlight -->
-            <div class="mt-5 p-4 rounded-2xl bg-brand-dark/95 border border-brand-border">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-brand-border flex items-center justify-center text-amber-400 font-black text-lg border border-amber-400/40">
-                  👨‍✈️
-                </div>
-                <div>
-                  <div class="font-extrabold text-white text-base">FO Rahul Sharma</div>
-                  <div class="text-xs font-semibold text-brand-cyan">IndiGo (A320neo) • AirGen Class of '23</div>
-                </div>
-              </div>
-              <p class="mt-3 text-xs text-slate-300 italic leading-relaxed">
-                “I joined AirGen immediately after 12th CBSE. Cleared all 5 DGCA papers in 4 months, flew 210 hours in Phoenix, and received my airline offer letter within 20 months.”
-              </p>
-              <div class="mt-3 flex items-center gap-2 text-[10px] font-bold uppercase">
-                <span class="px-2 py-0.5 rounded bg-amber-400/10 text-amber-400 border border-amber-400/20">10+2 to First Officer</span>
-                <span class="px-2 py-0.5 rounded bg-emerald-400/10 text-emerald-400 border border-emerald-400/20">DGCA CPL Endorsed</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- High Prestige Metric Strip (Bottom) -->
-      <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-brand-card/90 border border-brand-border shadow-2xl">
-        <div class="border-r border-brand-border/60 last:border-none pr-4">
-          <div class="text-3xl lg:text-4xl font-black text-amber-400">80+</div>
-          <div class="text-sm font-bold text-white mt-1">Graduated Pilots</div>
-          <div class="text-xs text-slate-400">Flying commercial airline routes</div>
-        </div>
-        <div class="border-r border-brand-border/60 last:border-none pr-4">
-          <div class="text-3xl lg:text-4xl font-black text-brand-cyan">100%</div>
-          <div class="text-sm font-bold text-white mt-1">DGCA Pass Rate</div>
-          <div class="text-xs text-slate-400">Calibrated CBT question engine</div>
-        </div>
-        <div class="border-r border-brand-border/60 last:border-none pr-4">
-          <div class="text-3xl lg:text-4xl font-black text-amber-400">18 - 22</div>
-          <div class="text-sm font-bold text-white mt-1">Months Timeline</div>
-          <div class="text-xs text-slate-400">From 10+2 pass to airline job</div>
-        </div>
-        <div>
-          <div class="text-3xl lg:text-4xl font-black text-brand-cyan">9</div>
-          <div class="text-sm font-bold text-white mt-1">Global Flight Bases</div>
-          <div class="text-xs text-slate-400">USA, South Africa & India</div>
-        </div>
-      </div>
-
-    </section>
-
-
-    <!-- ========================================================================= -->
-    <!-- SCREEN 2: 5-STAGE PILOT FLIGHTPATH -->
-    <!-- ========================================================================= -->
-    <section id="screen-flightpath" class="relative min-h-[900px] border-b border-brand-border/40 py-12 px-6 lg:px-16 flex flex-col justify-between">
-      
-      <div class="flex items-center justify-between text-xs font-semibold text-slate-500 uppercase tracking-wider mb-6">
-        <span>AIRGEN AVIATION • SCREEN 02: 5-STAGE PILOT CAREER FLIGHTPATH</span>
-        <span class="text-brand-cyan">Figma Frame Spec: 1440 × 900 px</span>
-      </div>
-
-      <!-- Section Header -->
-      <div class="mb-10">
-        <div class="inline-block px-3 py-1 rounded-full bg-brand-border/40 border border-brand-cyan/40 text-xs font-bold text-brand-cyan mb-2">
-          STRUCTURED 5-STAGE ROADMAP
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">
-          The Clear Flightpath: 12th Pass to First Officer Seat
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-3xl">
-          No ambiguities, no hidden delays. A DGCA-synchronized timeline engineered to get ambitious cadets into the cockpit in 18-22 months.
-        </p>
-      </div>
-
-      <!-- 5 Cards Horizontal Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-stretch">
-        
-        <!-- STAGE 1 -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-5 flex flex-col justify-between hover:border-brand-cyan transition-all">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-full bg-sky-600 font-black text-white text-xs flex items-center justify-center">01</span>
-              <span class="text-[10px] font-bold text-brand-cyan">MONTH 1-2</span>
-            </div>
-            <div class="mt-4 font-extrabold text-white text-base leading-snug">Medical &amp; DGCA Computer No.</div>
-            <hr class="border-brand-border/80 my-3">
-            <ul class="space-y-2 text-xs text-slate-300">
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Class 2 & 1 Medicals</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> DGCA Computer Number</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> 10+2 Verification (CBSE/NIOS)</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Pilot Aptitude Check</li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-brand-border/50 text-[10px] font-bold text-emerald-400 text-center bg-brand-dark/60 rounded-lg py-1.5">
-            ZERO-RISK VERIFICATION
-          </div>
-        </div>
-
-        <!-- STAGE 2 -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-5 flex flex-col justify-between hover:border-brand-cyan transition-all">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-full bg-sky-600 font-black text-white text-xs flex items-center justify-center">02</span>
-              <span class="text-[10px] font-bold text-brand-cyan">MONTH 3-6</span>
-            </div>
-            <div class="mt-4 font-extrabold text-white text-base leading-snug">Precision Theory &amp; DGCA Exams</div>
-            <hr class="border-brand-border/80 my-3">
-            <ul class="space-y-2 text-xs text-slate-300">
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> 5 DGCA Ground Subjects</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Air Nav, Met &amp; Regs</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> RTR(A) Radio Telephony</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Area 100 KSA Competency</li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-brand-border/50 text-[10px] font-bold text-brand-cyan text-center bg-brand-dark/60 rounded-lg py-1.5">
-            100% 1st-ATTEMPT PASS
-          </div>
-        </div>
-
-        <!-- STAGE 3 (HIGHLIGHTED CORE) -->
-        <div class="rounded-2xl bg-gradient-to-b from-brand-surface to-brand-card border-2 border-amber-400 p-5 flex flex-col justify-between glow-gold transform md:-translate-y-2">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-full bg-amber-400 font-black text-slate-950 text-xs flex items-center justify-center">03</span>
-              <span class="text-[10px] font-extrabold text-amber-400">MONTH 7-14</span>
-            </div>
-            <div class="mt-4 font-extrabold text-white text-base leading-snug">200+ Flying Hours (USA / S. Africa)</div>
-            <hr class="border-amber-400/40 my-3">
-            <ul class="space-y-2 text-xs text-slate-200">
-              <li class="flex items-start gap-1.5"><span class="text-amber-400">★</span> First Solo Flight</li>
-              <li class="flex items-start gap-1.5"><span class="text-amber-400">★</span> Cessna 172SP G1000 Glass</li>
-              <li class="flex items-start gap-1.5"><span class="text-amber-400">★</span> Night & Cross-Country</li>
-              <li class="flex items-start gap-1.5"><span class="text-amber-400">★</span> FAA / SACAA CPL Issue</li>
-              <li class="flex items-start gap-1.5"><span class="text-amber-400">★</span> Gated Housing & Visa</li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-amber-400/30 text-[10px] font-black text-amber-400 text-center bg-brand-dark/90 rounded-lg py-1.5">
-            PHOENIX &amp; JOHANNESBURG
-          </div>
-        </div>
-
-        <!-- STAGE 4 -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-5 flex flex-col justify-between hover:border-brand-cyan transition-all">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-full bg-sky-600 font-black text-white text-xs flex items-center justify-center">04</span>
-              <span class="text-[10px] font-bold text-brand-cyan">MONTH 15-17</span>
-            </div>
-            <div class="mt-4 font-extrabold text-white text-base leading-snug">Multi-Engine Rating &amp; DGCA CPL</div>
-            <hr class="border-brand-border/80 my-3">
-            <ul class="space-y-2 text-xs text-slate-300">
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Piper Seminole Multi-Engine</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Instrument Rating (IR)</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Seamless DGCA Conversion</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Indian Recency Flights</li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-brand-border/50 text-[10px] font-bold text-emerald-400 text-center bg-brand-dark/60 rounded-lg py-1.5">
-            CPL-ME ENDORSED
-          </div>
-        </div>
-
-        <!-- STAGE 5 -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-5 flex flex-col justify-between hover:border-brand-cyan transition-all">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-full bg-sky-600 font-black text-white text-xs flex items-center justify-center">05</span>
-              <span class="text-[10px] font-bold text-brand-cyan">MONTH 18-22</span>
-            </div>
-            <div class="mt-4 font-extrabold text-white text-base leading-snug">Type Rating &amp; First Officer Seat</div>
-            <hr class="border-brand-border/80 my-3">
-            <ul class="space-y-2 text-xs text-slate-300">
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> A320 / B737 Type Rating</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> MCC & Jet Orientation (JOC)</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Simulator Assessments</li>
-              <li class="flex items-start gap-1.5"><span class="text-brand-cyan">✓</span> Airline Indoctrination</li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-brand-border/50 text-[10px] font-bold text-amber-400 text-center bg-brand-dark/60 rounded-lg py-1.5">
-            80+ ALUMNI PLACED
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Action Strip Bottom -->
-      <div class="mt-10 p-6 rounded-2xl bg-brand-card/90 border border-brand-border flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <div class="text-white font-bold text-base">Unsure where you stand on the roadmap?</div>
-          <div class="text-slate-400 text-xs sm:text-sm">Use our instant 60-second interactive calculator to see your custom flight timeline.</div>
-        </div>
-        <button onclick="scrollToSection('screen-eligibility')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-brand-cyan text-slate-950 font-bold text-xs hover:brightness-110 shadow-lg">
-          Launch Eligibility Tool →
-        </button>
-      </div>
-
-    </section>
-
-
-    <!-- ========================================================================= -->
-    <!-- SCREEN 3: INTERACTIVE 12TH ELIGIBILITY & COST CALCULATOR -->
-    <!-- ========================================================================= -->
-    <section id="screen-eligibility" class="relative min-h-[900px] border-b border-brand-border/40 py-12 px-6 lg:px-16 flex flex-col justify-between">
-      
-      <div class="flex items-center justify-between text-xs font-semibold text-slate-500 uppercase tracking-wider mb-6">
-        <span>AIRGEN AVIATION • SCREEN 03: 12TH GRADE ELIGIBILITY &amp; ROADMAP CALCULATOR</span>
-        <span class="text-brand-cyan">Figma Frame Spec: 1440 × 900 px</span>
-      </div>
-
-      <!-- Header -->
-      <div class="mb-8">
-        <div class="inline-block px-3 py-1 rounded-full bg-brand-border/40 border border-brand-cyan/40 text-xs font-bold text-brand-cyan mb-2">
-          INTERACTIVE FLIGHT DECK CHECK
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">
-          12th Grade Pilot Eligibility &amp; Cost Roadmap Calculator
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-2">
-          Check your regulatory clearance in 30 seconds. Built for Class 12th CBSE, ICSE, State Boards, and NIOS aspirants.
-        </p>
-      </div>
-
-      <!-- Dual Panel Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Interactive Inputs (7 Cols) -->
-        <div class="lg:col-span-7 bg-brand-card/90 border border-brand-border rounded-2xl p-6 space-y-6 shadow-xl">
-          
-          <!-- Stream -->
-          <div>
-            <label class="block text-white text-sm font-bold mb-1">1. What is your 12th Grade Stream?</label>
-            <p class="text-slate-400 text-xs mb-3">DGCA requires Physics & Mathematics equivalence.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <button onclick="updateCalculator('stream', 'pcm')" id="btn-pcm" class="p-3.5 rounded-xl text-left border-2 border-brand-cyan bg-brand-border/50 text-white font-bold text-xs transition-all">
-                <span class="block text-sm font-black">PCM (Physics + Math)</span>
-                <span class="text-brand-cyan font-normal">Direct Eligibility Cleared</span>
-              </button>
-              <button onclick="updateCalculator('stream', 'non-pcm')" id="btn-non-pcm" class="p-3.5 rounded-xl text-left border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs transition-all">
-                <span class="block text-sm font-black">Commerce / Arts / PCB</span>
-                <span class="text-slate-400 font-normal">Via Fast-Track NIOS Math</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Age -->
-          <div>
-            <label class="block text-white text-sm font-bold mb-1">2. What is your Current Age?</label>
-            <p class="text-slate-400 text-xs mb-3">Minimum age to hold a DGCA CPL is 18 years.</p>
-            <div class="grid grid-cols-4 gap-2">
-              <button onclick="updateCalculator('age', '16')" class="py-2.5 rounded-lg border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs text-center hover:border-brand-cyan">16 - 17 Yrs</button>
-              <button onclick="updateCalculator('age', '18')" class="py-2.5 rounded-lg border-2 border-brand-cyan bg-brand-border/50 text-white font-bold text-xs text-center">17 - 19 Yrs ★</button>
-              <button onclick="updateCalculator('age', '21')" class="py-2.5 rounded-lg border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs text-center hover:border-brand-cyan">20 - 23 Yrs</button>
-              <button onclick="updateCalculator('age', '24')" class="py-2.5 rounded-lg border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs text-center hover:border-brand-cyan">24+ Yrs</button>
-            </div>
-          </div>
-
-          <!-- Vision -->
-          <div>
-            <label class="block text-white text-sm font-bold mb-1">3. Medical Fitness &amp; Vision Status</label>
-            <p class="text-slate-400 text-xs mb-3">Spectacles are 100% permitted under DGCA Class 1 guidelines.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <button class="p-3.5 rounded-xl text-left border-2 border-brand-cyan bg-brand-border/50 text-white font-bold text-xs">
-                <span class="block text-sm font-black">Normal / Corrected Vision</span>
-                <span class="text-brand-cyan font-normal">Glasses are fully allowed (6/6 corrected)</span>
-              </button>
-              <button class="p-3.5 rounded-xl text-left border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs">
-                <span class="block text-sm font-black">Not Yet Evaluated</span>
-                <span class="text-slate-400 font-normal">AirGen assists Class 2 Medical</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Flying Base Preference -->
-          <div>
-            <label class="block text-white text-sm font-bold mb-1">4. Preferred International Flying Base</label>
-            <p class="text-slate-400 text-xs mb-3">Where you log your 200 cockpit hours.</p>
-            <div class="grid grid-cols-3 gap-2">
-              <button class="py-3 px-2 rounded-xl border-2 border-brand-cyan bg-brand-border/50 text-white font-bold text-xs text-center">
-                USA (Phoenix) ★
-              </button>
-              <button class="py-3 px-2 rounded-xl border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs text-center">
-                South Africa (JNB)
-              </button>
-              <button class="py-3 px-2 rounded-xl border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs text-center">
-                Domestic (India)
-              </button>
-            </div>
-          </div>
-
-          <div class="p-3 rounded-xl bg-brand-dark/80 text-xs text-slate-300 flex items-center gap-2">
-            <span class="text-emerald-400 text-base">🛡️</span>
-            <span><strong class="text-white">AirGen Guarantee:</strong> We never accept enrollment fees before your medical eligibility is cleared.</span>
-          </div>
-
-        </div>
-
-        <!-- Live Clearance Card (5 Cols) -->
-        <div class="lg:col-span-5 bg-gradient-to-b from-brand-surface to-brand-card border-2 border-brand-cyan rounded-2xl p-6 shadow-2xl glow-cyan space-y-6">
-          
-          <!-- Top Clearance Banner -->
-          <div class="p-4 rounded-xl bg-emerald-600/90 text-white flex items-center gap-3">
-            <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-black">✓</span>
-            <div>
-              <div class="font-black text-sm tracking-wide">STATUS: CLEARED FOR PILOT TRAINING</div>
-              <div class="text-xs text-emerald-100">100% Eligible for DGCA Commercial Pilot License (CPL)</div>
-            </div>
-          </div>
-
-          <!-- Forecast Breakdown -->
-          <div class="p-4 rounded-xl bg-brand-dark/90 border border-brand-border grid grid-cols-2 gap-4">
-            <div>
-              <div class="text-[10px] font-bold text-brand-cyan uppercase">Estimated Timeline</div>
-              <div class="text-2xl font-black text-white mt-1">18 - 20 Mos</div>
-              <div class="text-[11px] text-slate-400">Day 1 Ground School to CPL</div>
-            </div>
-            <div class="border-l border-brand-border pl-4">
-              <div class="text-[10px] font-bold text-amber-400 uppercase">Alumni Benchmark</div>
-              <div class="text-2xl font-black text-amber-400 mt-1">80+ Cadets</div>
-              <div class="text-[11px] text-slate-400">Currently flying line with airlines</div>
-            </div>
-          </div>
-
-          <!-- Cost Transparency Table -->
-          <div>
-            <div class="text-xs font-bold text-white uppercase tracking-wider mb-2">Transparent Cost &amp; Stage Breakdown</div>
-            <div class="space-y-2 text-xs">
-              <div class="p-2.5 rounded-lg bg-brand-dark/60 flex items-center justify-between">
-                <span class="text-slate-200">1. DGCA Ground School &amp; CBT (5 Subjects)</span>
-                <span class="font-bold text-brand-cyan">Included in India</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-brand-dark/60 flex items-center justify-between">
-                <span class="text-slate-200">2. 200+ Flying Hours (USA Phoenix Base)</span>
-                <span class="font-bold text-brand-cyan">Standard Logged Hours</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-brand-dark/60 flex items-center justify-between">
-                <span class="text-slate-200">3. Multi-Engine Rating &amp; DGCA Conversion</span>
-                <span class="font-bold text-brand-cyan">Pre-Arranged Slots</span>
-              </div>
-              <div class="p-2.5 rounded-lg bg-brand-dark/60 flex items-center justify-between">
-                <span class="text-slate-200">4. Airline Prep &amp; Captain Mentorship</span>
-                <span class="font-bold text-emerald-400">Free Alumni Benefit</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Financing Pill -->
-          <div class="p-3 rounded-lg bg-amber-400/10 border border-amber-400/30 text-xs text-amber-300 font-semibold flex items-center gap-2">
-            <span>💳</span>
-            <span>100% Pre-Approved Education Loan Support with SBI &amp; HDFC Credila</span>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="space-y-2">
-            <button onclick="alert('Airgen 2026 Cadet Roadmap PDF downloaded successfully!')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-brand-cyan text-slate-950 font-extrabold text-xs hover:brightness-110 shadow-lg transition-all">
-              Download Personalized Roadmap PDF ↓
-            </button>
-            <button onclick="scrollToSection('screen-admissions')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-extrabold text-xs hover:brightness-110 shadow-lg transition-all">
-              Book Captain 1-on-1 Call 📞
-            </button>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================================================= -->
-    <!-- SCREEN 4: GLOBAL FLIGHT TRAINING FLEET & BASES -->
-    <!-- ========================================================================= -->
-    <section id="screen-bases" class="relative min-h-[900px] border-b border-brand-border/40 py-12 px-6 lg:px-16 flex flex-col justify-between">
-      
-      <div class="flex items-center justify-between text-xs font-semibold text-slate-500 uppercase tracking-wider mb-6">
-        <span>AIRGEN AVIATION • SCREEN 04: GLOBAL FLIGHT TRAINING FLEET &amp; BASES</span>
-        <span class="text-brand-cyan">Figma Frame Spec: 1440 × 900 px</span>
-      </div>
-
-      <!-- Header -->
-      <div class="mb-8">
-        <div class="inline-block px-3 py-1 rounded-full bg-brand-border/40 border border-brand-cyan/40 text-xs font-bold text-brand-cyan mb-2">
-          WORLD-CLASS FLIGHT ECOSYSTEM
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">
-          Global Flight Training Bases &amp; Advanced Fleet
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-2">
-          Ground training in India with AirGen, followed by 200+ fast-track flying hours at premier partner academies in the USA & South Africa.
-        </p>
-      </div>
-
-      <!-- 3 Base Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- BASE 1: USA -->
-        <div class="rounded-2xl bg-brand-card/90 border-2 border-brand-cyan p-6 flex flex-col justify-between shadow-2xl glow-cyan">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded bg-blue-600/30 text-blue-300 font-extrabold text-xs border border-blue-500/40">🇺🇸 UNITED STATES</span>
-              <span class="px-2 py-0.5 rounded bg-amber-400/10 text-amber-400 text-xs font-bold">☀️ 350 Fly Days</span>
-            </div>
-            <h3 class="text-xl font-black text-white">Phoenix, Arizona Base</h3>
-            <p class="text-xs text-brand-cyan font-medium mb-4">FAA Part 141 Accredited Flight Center</p>
-            <hr class="border-brand-border my-3">
-            <div class="space-y-3 text-xs">
-              <div>
-                <span class="text-slate-400 block font-semibold">Primary Training Fleet:</span>
-                <span class="text-white font-bold">Cessna 172SP (Garmin G1000 Glass Cockpit)</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">Multi-Engine Aircraft:</span>
-                <span class="text-white font-bold">Piper Seminole PA-44 Multi-Engine IFR</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">Duration to 200 Flying Hours:</span>
-                <span class="text-amber-400 font-extrabold">7 - 9 Months (Fast-Track Weather Guarantee)</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">Student Living &amp; Visa:</span>
-                <span class="text-slate-300">On-campus gated apartments, dedicated Indian meal plans, full M-1 visa processing.</span>
-              </div>
-            </div>
-          </div>
-          <div class="mt-6 p-3 rounded-xl bg-brand-dark text-center text-xs font-bold text-brand-cyan border border-brand-border">
-            ★ 55+ AirGen Cadets Trained Here
-          </div>
-        </div>
-
-        <!-- BASE 2: SOUTH AFRICA -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-6 flex flex-col justify-between shadow-xl hover:border-emerald-400 transition-all">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded bg-emerald-600/30 text-emerald-300 font-extrabold text-xs border border-emerald-500/40">🇿🇦 SOUTH AFRICA</span>
-              <span class="px-2 py-0.5 rounded bg-emerald-400/10 text-emerald-400 text-xs font-bold">⚡ High ROI Base</span>
-            </div>
-            <h3 class="text-xl font-black text-white">Johannesburg Base</h3>
-            <p class="text-xs text-brand-cyan font-medium mb-4">SACAA &amp; DGCA Reciprocal Flight Academy</p>
-            <hr class="border-brand-border my-3">
-            <div class="space-y-3 text-xs">
-              <div>
-                <span class="text-slate-400 block font-semibold">Primary Training Fleet:</span>
-                <span class="text-white font-bold">Cessna 172 &amp; Piper Archer PA-28</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">Multi-Engine Aircraft:</span>
-                <span class="text-white font-bold">Tecnam P2006T &amp; Piper Seneca III</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">Duration to 200 Flying Hours:</span>
-                <span class="text-emerald-400 font-extrabold">8 - 10 Months (Cost-Effective Pathway)</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">Student Living &amp; Safety:</span>
-                <span class="text-slate-300">Secure pilot campus accommodation, daily shuttle to flight line, 24/7 warden.</span>
-              </div>
-            </div>
-          </div>
-          <div class="mt-6 p-3 rounded-xl bg-brand-dark text-center text-xs font-bold text-emerald-400 border border-brand-border">
-            ✓ 25+ AirGen Cadets Trained Here
-          </div>
-        </div>
-
-        <!-- BASE 3: INDIA HQ -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-6 flex flex-col justify-between shadow-xl hover:border-amber-400 transition-all">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded bg-amber-600/30 text-amber-300 font-extrabold text-xs border border-amber-500/40">🇮🇳 INDIA HQ</span>
-              <span class="px-2 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan text-xs font-bold">✈️ Theory HQ</span>
-            </div>
-            <h3 class="text-xl font-black text-white">AirGen Academy HQ</h3>
-            <p class="text-xs text-brand-cyan font-medium mb-4">Hyderabad &amp; New Delhi Flight Centers</p>
-            <hr class="border-brand-border my-3">
-            <div class="space-y-3 text-xs">
-              <div>
-                <span class="text-slate-400 block font-semibold">Simulators &amp; Cockpit Labs:</span>
-                <span class="text-white font-bold">ALSIM ALX &amp; Level 5 Flight Training Devices</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">Ground Training Curriculum:</span>
-                <span class="text-white font-bold">5 DGCA Subjects + RTR(A) + Area 100 KSA</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">Faculty &amp; Mentors:</span>
-                <span class="text-brand-cyan font-extrabold">Active Senior Airline Captains &amp; DGCA Examiners</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block font-semibold">License Conversion Wing:</span>
-                <span class="text-slate-300">End-to-end DGCA CPL license conversion paperwork &amp; Indian recency flights.</span>
-              </div>
-            </div>
-          </div>
-          <div class="mt-6 p-3 rounded-xl bg-brand-dark text-center text-xs font-bold text-amber-400 border border-brand-border">
-            ★ 80+ Airline Pilots Passed Out
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Reassurance Strip Bottom -->
-      <div class="mt-8 p-4 rounded-xl bg-brand-card/90 border border-brand-border flex items-center justify-between">
-        <div class="flex items-center gap-3 text-xs sm:text-sm">
-          <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
-          <span class="font-bold text-white">Parents Reassurance Guarantee:</span>
-          <span class="text-slate-400 hidden sm:inline">All international bases are directly vetted by AirGen founders. Cadets travel with dedicated batch coordinators.</span>
-        </div>
-        <button onclick="scrollToSection('screen-admissions')" class="px-4 py-2 rounded-lg bg-amber-400 text-slate-950 text-xs font-bold hover:brightness-110">
-          Explore Base Tours →
-        </button>
-      </div>
-
-    </section>
-
-
-    <!-- ========================================================================= -->
-    <!-- SCREEN 5: 80+ ALUMNI HALL OF WINGS & PLACEMENTS -->
-    <!-- ========================================================================= -->
-    <section id="screen-alumni" class="relative min-h-[900px] border-b border-brand-border/40 py-12 px-6 lg:px-16 flex flex-col justify-between">
-      
-      <div class="flex items-center justify-between text-xs font-semibold text-slate-500 uppercase tracking-wider mb-6">
-        <span>AIRGEN AVIATION • SCREEN 05: 80+ ALUMNI HALL OF WINGS &amp; PLACEMENTS</span>
-        <span class="text-brand-cyan">Figma Frame Spec: 1440 × 900 px</span>
-      </div>
-
-      <!-- Header -->
-      <div class="mb-8">
-        <div class="inline-block px-3 py-1 rounded-full bg-brand-border/40 border border-amber-400/40 text-xs font-bold text-amber-400 mb-2">
-          PROOF OF OUTCOMES
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">
-          The Hall of Wings: 80+ Graduated Airline Pilots
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-2">
-          From high school classrooms to commercial airline command. Meet the cadets who trusted AirGen’s structured training.
-        </p>
-      </div>
-
-      <!-- 3 Cadet Testimonial Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Cadet 1 -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-6 flex flex-col justify-between shadow-xl">
-          <div>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-brand-border flex items-center justify-center text-amber-400 font-black text-xl border border-amber-400/40">
-                  👨‍✈️
-                </div>
-                <div>
-                  <div class="font-extrabold text-white text-base">Capt. Aarav Singhania</div>
-                  <div class="text-xs font-semibold text-brand-cyan">First Officer · IndiGo (A320neo)</div>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-400 border border-blue-500/30">INDIGO</span>
-            </div>
-            <hr class="border-brand-border my-4">
-            <div class="space-y-1 text-xs text-slate-400">
-              <div class="flex justify-between"><span>Joined AirGen:</span><span class="text-slate-200 font-bold">After 12th CBSE (Delhi)</span></div>
-              <div class="flex justify-between"><span>Flight Base:</span><span class="text-slate-200 font-bold">Phoenix, USA (210 Hours)</span></div>
-              <div class="flex justify-between"><span>Time to Airline Line:</span><span class="text-emerald-400 font-extrabold">19 Months Total</span></div>
-            </div>
-            <div class="mt-4 p-4 rounded-xl bg-brand-dark/80 border border-brand-border text-xs text-slate-300 italic leading-relaxed">
-              “AirGen took full ownership of my DGCA computer number and ground theory. When I landed in Phoenix, the cockpit prep felt completely familiar. Today I’m flying revenue flights on the A320.”
-            </div>
-          </div>
-          <div class="mt-4 text-[10px] font-semibold text-slate-500 uppercase">
-            ALUMNI ID: #AG-1042 • VERIFIED GRADUATE
-          </div>
-        </div>
-
-        <!-- Cadet 2 -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-6 flex flex-col justify-between shadow-xl">
-          <div>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-brand-border flex items-center justify-center text-amber-400 font-black text-xl border border-amber-400/40">
-                  👩‍✈️
-                </div>
-                <div>
-                  <div class="font-extrabold text-white text-base">FO Sneha Deshmukh</div>
-                  <div class="text-xs font-semibold text-brand-cyan">First Officer · Air India (B787)</div>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded text-[10px] font-black bg-red-500/20 text-red-400 border border-red-500/30">AIR INDIA</span>
-            </div>
-            <hr class="border-brand-border my-4">
-            <div class="space-y-1 text-xs text-slate-400">
-              <div class="flex justify-between"><span>Joined AirGen:</span><span class="text-slate-200 font-bold">After 12th State Board (Mumbai)</span></div>
-              <div class="flex justify-between"><span>Flight Base:</span><span class="text-slate-200 font-bold">South Africa Base (220 Hours)</span></div>
-              <div class="flex justify-between"><span>Time to Airline Line:</span><span class="text-emerald-400 font-extrabold">18 Months Total</span></div>
-            </div>
-            <div class="mt-4 p-4 rounded-xl bg-brand-dark/80 border border-brand-border text-xs text-slate-300 italic leading-relaxed">
-              “My parents were very nervous about sending me abroad. AirGen arranged direct calls with senior captains and managed full student housing. The airline interview simulator drills were the exact reason I aced Air India’s induction.”
-            </div>
-          </div>
-          <div class="mt-4 text-[10px] font-semibold text-slate-500 uppercase">
-            ALUMNI ID: #AG-1078 • VERIFIED GRADUATE
-          </div>
-        </div>
-
-        <!-- Cadet 3 -->
-        <div class="rounded-2xl bg-brand-card/90 border border-brand-border p-6 flex flex-col justify-between shadow-xl">
-          <div>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-brand-border flex items-center justify-center text-amber-400 font-black text-xl border border-amber-400/40">
-                  👨‍✈️
-                </div>
-                <div>
-                  <div class="font-extrabold text-white text-base">FO Rohan Varma</div>
-                  <div class="text-xs font-semibold text-brand-cyan">First Officer · Akasa Air (B737)</div>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded text-[10px] font-black bg-orange-500/20 text-orange-400 border border-orange-500/30">AKASA AIR</span>
-            </div>
-            <hr class="border-brand-border my-4">
-            <div class="space-y-1 text-xs text-slate-400">
-              <div class="flex justify-between"><span>Joined AirGen:</span><span class="text-slate-200 font-bold">After 12th NIOS Math</span></div>
-              <div class="flex justify-between"><span>Flight Base:</span><span class="text-slate-200 font-bold">Phoenix, USA (205 Hours)</span></div>
-              <div class="flex justify-between"><span>Time to Airline Line:</span><span class="text-emerald-400 font-extrabold">20 Months Total</span></div>
-            </div>
-            <div class="mt-4 p-4 rounded-xl bg-brand-dark/80 border border-brand-border text-xs text-slate-300 italic leading-relaxed">
-              “I didn’t take Math in 11th, so other schools rejected me. AirGen guided me through NIOS equivalence without losing a single semester. No false promises, completely costed day one. Best decision of my life.”
-            </div>
-          </div>
-          <div class="mt-4 text-[10px] font-semibold text-slate-500 uppercase">
-            ALUMNI ID: #AG-1065 • VERIFIED GRADUATE
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Airline Logos Strip -->
-      <div class="mt-8 p-6 rounded-2xl bg-brand-card/90 border border-brand-border">
-        <div class="text-xs font-bold text-brand-cyan uppercase tracking-wider mb-4">
-          Where AirGen Cadets Are Actively Flying As First Officers &amp; Captains:
-        </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
-          <div class="p-3 rounded-xl bg-brand-dark border border-brand-border font-black text-sm text-sky-400">IndiGo</div>
-          <div class="p-3 rounded-xl bg-brand-dark border border-brand-border font-black text-sm text-red-400">Air India</div>
-          <div class="p-3 rounded-xl bg-brand-dark border border-brand-border font-black text-sm text-orange-400">Akasa Air</div>
-          <div class="p-3 rounded-xl bg-brand-dark border border-brand-border font-black text-sm text-amber-500">SpiceJet</div>
-          <div class="p-3 rounded-xl bg-brand-dark border border-brand-border font-black text-sm text-amber-400">Air India Express</div>
-          <div class="p-3 rounded-xl bg-brand-dark border border-brand-border font-bold text-sm text-slate-400">Global Charters</div>
-        </div>
-      </div>
-
-    </section>
-
-
-    <!-- ========================================================================= -->
-    <!-- SCREEN 6: PARENTS ADMISSIONS HUB, FAQS & FOOTER -->
-    <!-- ========================================================================= -->
-    <section id="screen-admissions" class="relative min-h-[900px] py-12 px-6 lg:px-16 flex flex-col justify-between">
-      
-      <div class="flex items-center justify-between text-xs font-semibold text-slate-500 uppercase tracking-wider mb-6">
-        <span>AIRGEN AVIATION • SCREEN 06: ADMISSIONS, PARENTAL GUIDANCE &amp; ACCREDITATIONS</span>
-        <span class="text-brand-cyan">Figma Frame Spec: 1440 × 900 px</span>
-      </div>
-
-      <!-- Header -->
-      <div class="mb-8">
-        <div class="inline-block px-3 py-1 rounded-full bg-brand-border/40 border border-brand-cyan/40 text-xs font-bold text-brand-cyan mb-2">
-          PARENTS &amp; ADMISSIONS PORTAL
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">
-          Begin Your Flight Journey With 100% Clarity
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-2">
-          Schedule a private 1-on-1 counseling session with an active Airline Captain for you and your parents.
-        </p>
-      </div>
-
-      <!-- Dual Column Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Consultation Form (6 Cols) -->
-        <div class="lg:col-span-6 bg-brand-card/90 border border-brand-border rounded-2xl p-6 shadow-xl">
-          <h3 class="text-lg font-black text-white">Book a 1-on-1 Flight Deck Consultation</h3>
-          <p class="text-slate-400 text-xs mt-1 mb-5">Speak directly with Captain Manas Teja & AirGen senior flight examiners.</p>
-
-          <form onsubmit="event.preventDefault(); alert('Consultation Request Submitted! Our Chief Flight Counselor will WhatsApp you within 15 minutes.');" class="space-y-4 text-xs">
-            <div>
-              <label class="block text-slate-200 font-bold mb-1">Student Full Name *</label>
-              <input type="text" required placeholder="e.g., Rohan Gupta" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-cyan">
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label class="block text-slate-200 font-bold mb-1">Parent / Guardian Name *</label>
-                <input type="text" required placeholder="e.g., Rajesh Gupta" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-cyan">
-              </div>
-              <div>
-                <label class="block text-slate-200 font-bold mb-1">Parent Mobile (WhatsApp) *</label>
-                <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-cyan">
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-slate-200 font-bold mb-1">12th Grade Status *</label>
-              <div class="grid grid-cols-3 gap-2">
-                <label class="p-2.5 rounded-lg border border-brand-border bg-brand-dark text-center cursor-pointer hover:border-brand-cyan">
-                  <input type="radio" name="edu_status" checked class="hidden">
-                  <span class="text-[11px] text-slate-200 font-bold">Currently in 12th</span>
-                </label>
-                <label class="p-2.5 rounded-lg border border-brand-border bg-brand-dark text-center cursor-pointer hover:border-brand-cyan">
-                  <input type="radio" name="edu_status" class="hidden">
-                  <span class="text-[11px] text-slate-200 font-bold">Passed 12th</span>
-                </label>
-                <label class="p-2.5 rounded-lg border border-brand-border bg-brand-dark text-center cursor-pointer hover:border-brand-cyan">
-                  <input type="radio" name="edu_status" class="hidden">
-                  <span class="text-[11px] text-slate-200 font-bold">Graduate / Gap</span>
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-slate-200 font-bold mb-1">Consultation Preference *</label>
-              <div class="grid grid-cols-2 gap-2">
-                <label class="p-2.5 rounded-lg border-2 border-brand-cyan bg-brand-border/40 text-center cursor-pointer">
-                  <input type="radio" name="mode" checked class="hidden">
-                  <span class="text-[11px] text-white font-bold">📍 Hyderabad Campus Visit</span>
-                </label>
-                <label class="p-2.5 rounded-lg border border-brand-border bg-brand-dark text-center cursor-pointer">
-                  <input type="radio" name="mode" class="hidden">
-                  <span class="text-[11px] text-slate-200 font-bold">💻 Video Call via Zoom</span>
-                </label>
-              </div>
-            </div>
-
-            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-sm hover:brightness-110 shadow-lg shadow-amber-400/20 transition-all mt-2">
-              Confirm Free Captain Consultation ✈️
-            </button>
-
-            <p class="text-[11px] text-slate-500 text-center">
-              🔒 100% Confidential. No spam. You will receive an instant WhatsApp confirmation.
-            </p>
-          </form>
-        </div>
-
-        <!-- FAQs & Accreditations (6 Cols) -->
-        <div class="lg:col-span-6 space-y-4">
-          
-          <div class="bg-brand-card/90 border border-brand-border rounded-2xl p-6 shadow-xl space-y-3">
-            <h3 class="text-base font-black text-white mb-2">Frequently Asked Questions by Parents</h3>
-
-            <!-- FAQ 1 -->
-            <details class="group p-3.5 rounded-xl bg-brand-dark border border-brand-border open:border-brand-cyan transition-all" open>
-              <summary class="font-bold text-xs sm:text-sm text-brand-cyan cursor-pointer list-none flex justify-between items-center">
-                <span>Q: Is my child safe while flying abroad in Phoenix or S. Africa?</span>
-                <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-                Yes. All AirGen cadets stay in secured, gated pilot residences with 24/7 wardens, supervised flight line shuttles, and dedicated AirGen batch managers on ground.
-              </p>
-            </details>
-
-            <!-- FAQ 2 -->
-            <details class="group p-3.5 rounded-xl bg-brand-dark border border-brand-border open:border-brand-cyan transition-all">
-              <summary class="font-bold text-xs sm:text-sm text-white cursor-pointer list-none flex justify-between items-center">
-                <span>Q: Can we avail an education loan for the entire course?</span>
-                <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-                Yes. AirGen provides full documentation for SBI Scholar & HDFC Credila pilot loan schemes. Repayment starts after completion of training.
-              </p>
-            </details>
-
-            <!-- FAQ 3 -->
-            <details class="group p-3.5 rounded-xl bg-brand-dark border border-brand-border open:border-brand-cyan transition-all">
-              <summary class="font-bold text-xs sm:text-sm text-white cursor-pointer list-none flex justify-between items-center">
-                <span>Q: What happens if DGCA regulations change during training?</span>
-                <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-                AirGen’s curriculum is synchronized in real-time with DGCA CAR Section 7 requirements. Our regulatory cell manages all paper filings.
-              </p>
-            </details>
-          </div>
-
-          <!-- Accreditations Box -->
-          <div class="bg-brand-card/90 border border-brand-border rounded-2xl p-5 shadow-xl">
-            <div class="text-[10px] font-bold text-amber-400 uppercase tracking-wider mb-2">Regulatory Compliance &amp; Accreditations:</div>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
-              <div class="p-2.5 rounded-lg bg-brand-dark border border-brand-border font-bold text-slate-200">DGCA India</div>
-              <div class="p-2.5 rounded-lg bg-brand-dark border border-brand-border font-bold text-slate-200">FAA USA</div>
-              <div class="p-2.5 rounded-lg bg-brand-dark border border-brand-border font-bold text-slate-200">SACAA S.Africa</div>
-              <div class="p-2.5 rounded-lg bg-brand-dark border border-brand-border font-bold text-slate-200">ICAO Annex 1</div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Regulatory Footer -->
-      <footer class="mt-12 p-6 rounded-2xl bg-[#061224] border border-brand-border flex flex-wrap items-center justify-between gap-6 text-xs text-slate-400">
-        <div>
-          <div class="font-black text-white text-base">AIRGEN AVIATION ACADEMY</div>
-          <p class="text-slate-500 text-[11px] mt-0.5">Aviation Career Pathway & DGCA Precision Ground Training Organization • 80+ Airline Pilots Graduated</p>
-        </div>
-        <div>
-          <span class="font-bold text-slate-300">Flight HQ:</span> Hangar 4, Begumpet / Hyderabad, India<br>
-          <span class="font-bold text-slate-300">Inquiries:</span> admissions@airgenaviation.com | +91 91234 56789
-        </div>
-        <div class="text-right">
-          <div>© 2026 AirGen Aviation. All Rights Reserved.</div>
-          <div class="text-[10px] text-slate-500">Designed for UI/UX Excellence</div>
-        </div>
-      </footer>
-
-    </section>
-
-  </main>
-
-  <script>
-    function scrollToSection(id) {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    function updateCalculator(field, val) {
-      if (field === 'stream') {
-        const pcmBtn = document.getElementById('btn-pcm');
-        const nonPcmBtn = document.getElementById('btn-non-pcm');
-        if (val === 'pcm') {
-          pcmBtn.className = "p-3.5 rounded-xl text-left border-2 border-brand-cyan bg-brand-border/50 text-white font-bold text-xs transition-all";
-          nonPcmBtn.className = "p-3.5 rounded-xl text-left border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs transition-all";
-        } else {
-          nonPcmBtn.className = "p-3.5 rounded-xl text-left border-2 border-brand-cyan bg-brand-border/50 text-white font-bold text-xs transition-all";
-          pcmBtn.className = "p-3.5 rounded-xl text-left border border-brand-border bg-brand-dark/60 text-slate-300 font-semibold text-xs transition-all";
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        let currentEmail = "";
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(el => {
+                el.classList.add('hidden-section');
+                el.classList.remove('fade-in');
+            });
+            const target = document.getElementById(pageId);
+            target.classList.remove('hidden-section');
+            // Re-trigger animation
+            void target.offsetWidth;
+            target.classList.add('fade-in');
+            document.getElementById('otpInput').value = '';
         }
-      }
-    }
-  </script>
+
+        async function requestOTP() {
+            const name = document.getElementById('regName').value;
+            const phone = document.getElementById('regPhone').value;
+            const email = document.getElementById('regEmail').value;
+            const terms = document.getElementById('regTerms').checked;
+
+            if (!name || !phone || !email) { alert("Please fill all fields."); return; }
+            if (!terms) { alert("Please accept the Terms & Conditions."); return; }
+
+            currentEmail = email;
+            const btn = document.getElementById('regBtn');
+            btn.innerText = "Authenticating...";
+            btn.classList.add('btn-loading');
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/send-otp', { method: 'POST', body: JSON.stringify({ email: email }) });
+                const data = await res.json();
+                if (data.success) { showPage('otp'); }
+            } catch(e) {
+                alert("Network error.");
+            } finally {
+                btn.innerText = "Verify Email";
+                btn.classList.remove('btn-loading');
+                btn.disabled = false;
+            }
+        }
+
+        async function requestLoginOTP() {
+            const email = document.getElementById('loginEmail').value;
+            if (!email) { alert("Please enter your email."); return; }
+            currentEmail = email;
+            const btn = document.getElementById('loginBtn');
+            btn.innerText = "Establishing Link...";
+            btn.classList.add('btn-loading');
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/send-otp', { method: 'POST', body: JSON.stringify({ email: email }) });
+                const data = await res.json();
+                if (data.success) { showPage('otp'); }
+            } catch(e) {
+                alert("Network error.");
+            } finally {
+                btn.innerText = "Send Secure OTP";
+                btn.classList.remove('btn-loading');
+                btn.disabled = false;
+            }
+        }
+
+        async function verifyOTP() {
+            const otp = document.getElementById('otpInput').value;
+            if (!otp) { alert("Enter the 6-digit OTP."); return; }
+
+            const btn = document.getElementById('verifyBtn');
+            btn.innerText = "Verifying...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/verify-otp', { method: 'POST', body: JSON.stringify({ email: currentEmail, otp: otp }) });
+                const data = await res.json();
+                if (data.success) { showPage('success'); } else { alert("Invalid OTP. Try again."); }
+            } catch(e) {
+                alert("Network error.");
+            } finally {
+                btn.innerText = "Authenticate";
+                btn.disabled = false;
+            }
+        }
+    </script>
 </body>
 </html>
